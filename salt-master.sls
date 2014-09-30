@@ -14,3 +14,7 @@ git_repos:
   pkg.installed:
     - names:
       - git
+  file.directory:
+    - name: /srv/git_repos
+  git.present:
+    - name: /srv/git_repos/salt_states
