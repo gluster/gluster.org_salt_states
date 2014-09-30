@@ -16,8 +16,10 @@ git_repos:
       - git
   file.directory:
     - name: /srv/git_repos
+{% for repo in ['states', 'pillar', 'pillar_private'] %}
   git.present:
-    - name: /srv/git_repos/salt_states
+    - name: /srv/git_repos/{{ repo }}
+{% endfor %}
 
 # TODO
 #  add the others repo
