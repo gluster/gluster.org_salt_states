@@ -18,3 +18,7 @@ git_repos:
     - name: /srv/git_repos
   git.present:
     - name: /srv/git_repos/salt_states
+
+# TODO
+#  add the others repo
+#  add the script in post-receive that extract everything

@@ -1,6 +1,6 @@
 base:
   '*':
-    - salt-minion
-    - base_pkg
+    - salt.minion
+    - base.pkgs
   'salt-master.*':
-    - salt-master
+    - salt.master
