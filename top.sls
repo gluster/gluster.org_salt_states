@@ -1,6 +1,6 @@
 base:
   'supercolony.gluster.org':
-    - varnish
+    - varnish.server
   '*':
     - salt.minion
     - base.pkgs
