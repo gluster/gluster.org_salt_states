@@ -16,11 +16,11 @@ git_repos:
       - git
   file.directory:
     - name: /srv/git_repos
-{% for repo in ['states', 'pillar', 'pillar_private'] %}
   git.present:
-    - name: /srv/git_repos/{{ repo }}
+    - names:
+{% for repo in ['states', 'pillar', 'pillar_private'] %}
+      - /srv/git_repos/{{ repo }}
 {% endfor %}
 
 # TODO
-#  add the others repo
 #  add the script in post-receive that extract everything
