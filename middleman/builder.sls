@@ -23,7 +23,7 @@ middleman_builder:
    - home: /srv/builder/
   git:
    - latest
-   - name:
+   - name:  git://forge.gluster.org/gluster-site/gluster-site.git
    - target: /srv/builder/website
    - user: middleman_builder
    - submodules: True
