@@ -11,11 +11,11 @@ middleman_builder:
       - ImageMagick
       - mutt
       - patch
-      - curl-devel
+      - libcurl-devel
   file:
    - name: /usr/local/bin/build_deploy.sh
    - managed
-   - source: salt://middleman/foo.sh
+   - source: salt://middleman/build_deploy.sh
   user: 
    - present
    - name: middleman_builder 
