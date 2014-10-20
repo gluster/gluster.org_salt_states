@@ -9,3 +9,5 @@ base:
     - base.pkgs
   'salt-master.*':
     - salt.master
+  'webbuilder.*':
+    - middleman.builder
