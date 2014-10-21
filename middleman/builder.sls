@@ -30,5 +30,5 @@ middleman_builder:
   cron:
     - present
     - name: /usr/local/bin/build_deploy.sh gluster root@www.gluster.org:/var/www/staging HEAD mscherer@redhat.com
-    - minute: */5
+    - minute: '*/5'
     - user: middleman_builder
