@@ -27,8 +27,12 @@ middleman_builder:
     - target: /srv/builder/website
     - user: middleman_builder
     - submodules: True
+# TODO create the remote user
+# create the ssh keys on this side
+# put it in a grain on the other side
+# share the setting
   cron:
     - present
-    - name: /usr/local/bin/build_deploy.sh gluster root@www.gluster.org:/var/www/staging HEAD mscherer@redhat.com
+    - name: /usr/local/bin/build_deploy.sh gluster deploy_website@www.gluster.org:/var/www/middleman_website/master HEAD mscherer@redhat.com
     - minute: '*/5'
     - user: middleman_builder
