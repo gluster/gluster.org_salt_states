@@ -1,5 +1,5 @@
 include:
-  - httpd
+  - httpd.server
 
 middleman_web_server:
   pkg:
