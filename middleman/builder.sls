@@ -23,6 +23,7 @@ middleman_builder:
     - fullname: Middleman builder user
     - home: /srv/builder/
 {% for branch in ['master'] %}
+middleman_builder_{{ branch }}
   git:
     - latest
     - name:  git://forge.gluster.org/gluster-site/gluster-site.git
