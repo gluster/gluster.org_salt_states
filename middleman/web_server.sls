@@ -10,5 +10,5 @@ middleman_web_server:
     - present
     - name: deploy_website
     - fullname: Middleman deploy user
-    - home: /var/www/middelman_website
+    - home: /var/www/middleman_website
  
