@@ -15,6 +15,7 @@ middleman_builder:
   file:
     - name: /usr/local/bin/build_deploy.sh
     - managed
+    - mode: 755
     - source: salt://middleman/build_deploy.sh
   user: 
     - present
