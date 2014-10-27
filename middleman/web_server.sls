@@ -1,3 +1,6 @@
+include:
+  - httpd
+
 middleman_web_server:
   pkg:
     - installed
