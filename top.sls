@@ -4,6 +4,7 @@ base:
     - httpd.server
     # needed for wordpress
     - memcached.server
+    - middleman.web_server
   '*':
     - salt.minion
     - base.pkgs
