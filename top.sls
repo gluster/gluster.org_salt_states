@@ -8,6 +8,7 @@ base:
   '*':
     - salt.minion
     - base.pkgs
+    - ntp
   'salt-master.*':
     - salt.master
   'webbuilder.*':
