@@ -15,12 +15,6 @@ DIR="/srv/builder/$NAME"
 cd $DIR
 git fetch -q
 
-if [ $( git diff --name-only origin/${BRANCH:-master} | wc -l ) -eq 0 -a ! -f ~/git_updated_${NAME} ]; then
-  rm -f ~/lock_${NAME}
-  exit 0
-fi
-
-touch  ~/git_updated_${NAME}
 git pull --rebase
 bundle install
 bundle exec middleman build > ~/error_${NAME} 2>&1
@@ -37,4 +31,4 @@ rm -f ~/error_${NAME}
 rsync -e "ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i $HOME/.ssh/${NAME}_id.rsa" -rqavz $DIR/build/ $REMOTE/
 
 date > ~/last_update_$NAME
-rm -f ~/lock_${NAME} ~/git_updated_${NAME}
+rm -f ~/lock_${NAME}
