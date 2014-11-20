@@ -24,7 +24,7 @@ awestruct_builder_{{ branch }}:
   git:
     - latest
     - name:  git://forge.gluster.org/gluster-docs-project/gluster-docs-project.git
-    - target: /srv/awestruct_builder/checkout_{{ branch }}
+    - target: /srv/awestruct_builder/docs_{{ branch }}
     - user: awestruct_builder
     - submodules: True
     - rev: {{ branch }}
