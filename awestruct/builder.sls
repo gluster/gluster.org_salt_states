@@ -50,7 +50,6 @@ awestruct_builder_{{ branch }}:
   cron:
     - present
     - name: /usr/local/bin/build_deploy.common.sh /srv/awestruct_builder/awestruct_{{ branch }}.sh
-# deploy_website@www.gluster.org:/var/www/awestruct_website/{{ branch }}  HEAD mscherer@redhat.com
     - minute: '*/5'
     - user: awestruct_builder
 {% endfor %}
