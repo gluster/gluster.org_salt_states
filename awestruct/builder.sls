@@ -48,7 +48,7 @@ awestruct_builder_{{ branch }}:
 # share the setting
   cron:
     - present
-    - name: /usr/local/bin/build_deploy.awestruct.sh awestruct_{{ branch }}.sh
+    - name: /usr/local/bin/build_deploy.common.sh /srv/awestruct_builder/awestruct_{{ branch }}.sh
 # deploy_website@www.gluster.org:/var/www/awestruct_website/{{ branch }}  HEAD mscherer@redhat.com
     - minute: '*/5'
     - user: awestruct_builder
