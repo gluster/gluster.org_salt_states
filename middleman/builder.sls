@@ -1,3 +1,6 @@
+include:
+  - webbuilder.builder_common
+
 middleman_builder:
   pkg:
     - installed
@@ -12,32 +15,53 @@ middleman_builder:
       - mutt
       - patch
       - libcurl-devel
-  file:
-    - name: /usr/local/bin/build_deploy.sh
-    - managed
-    - mode: 755
-    - source: salt://middleman/build_deploy.sh
   user: 
     - present
     - name: middleman_builder 
     - fullname: Middleman builder user
-    - home: /srv/builder/
+    - home: /srv/middleman_builder/
 {% for branch in ['master'] %}
 middleman_builder_{{ branch }}:
   git:
     - latest
     - name:  git://forge.gluster.org/gluster-site/gluster-site.git
-    - target: /srv/builder/website_{{ branch }}
+    - target: /srv/middleman_builder/website_{{ branch }}
     - user: middleman_builder
     - submodules: True
     - rev: {{ branch }}
+  file:
+    - managed
+    - source: salt://webbuilder/config.sh
+    - name: /srv/middleman_builder/middleman_{{ branch }}.sh
+    - user: middleman_builder
+    - group: middleman_builder
+    - mode: 644
+    - template: jinja
+    - context:
+        name: website_{{ branch }}
+        result_dir: htmltext
+        build_command: "rake gen"
+        remote: deploy_website@www.gluster.org:/var/www/middleman_website/{{ branch }}
+        branch: {{ branch }}
+        email_error: mscherer@redhat.com
 # TODO create the remote user
 # create the ssh keys on this side
 # put it in a grain on the other side
 # share the setting
   cron:
     - present
-    - name: /usr/local/bin/build_deploy.sh website_{{ branch }} deploy_website@www.gluster.org:/var/www/middleman_website/{{ branch }}  HEAD mscherer@redhat.com
+    - name: /usr/local/bin/build_deploy.common.sh /srv/middleman_builder/middleman_{{ branch }}.sh
     - minute: '*/5'
     - user: middleman_builder
 {% endfor %}
+
+
+# TODO create the remote user
+# create the ssh keys on this side
+# put it in a grain on the other side
+# share the setting
+#  cron:
+#    - present
+#    - name: /usr/local/bin/build_deploy.sh website_{{ branch }} deploy_website@www.gluster.org:/var/www/middleman_website/{{ branch }}  HEAD mscherer@redhat.com
+#    - minute: '*/5'
+#   #- user: middleman_builder
