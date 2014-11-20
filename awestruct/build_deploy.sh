@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RESULT_DIR=htmlext
+RESULT_DIR=htmltext
 BUILD_COMMAND="rake gen"
 
 export PATH="/usr/local/bin:$HOME/bin:$PATH"
