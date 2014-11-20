@@ -37,10 +37,10 @@ awestruct_builder_{{ branch }}:
     - mode: 644
     - template: jinja
     - context:
+        name: docs_{{ branch }}
         result_dir: htmltext
         build_command: "rake gen"
-        name: checkout_{{ branch }}
-        remote: HEAD
+        remote: deploy_website@www.gluster.org:/var/www/awestruct_docs/{{ branch }}
         branch: {{ branch }}
         email_error: mscherer@redhat.com
 # TODO create the remote user
