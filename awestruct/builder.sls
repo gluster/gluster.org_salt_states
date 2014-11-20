@@ -30,6 +30,7 @@ awestruct_builder_{{ branch }}:
     - rev: {{ branch }}
   file:
     - managed
+    - source: salt://webbuilder/config.sh
     - name: /srv/awestruct_builder/awestruct_{{ branch }}.sh
     - user: awestruct_builder
     - group: awestruct_builder
