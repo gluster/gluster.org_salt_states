@@ -39,7 +39,7 @@ awestruct_builder_{{ branch }}:
     - context:
         result_dir: htmltext
         build_command: "rake gen"
-        name: awestruct_{{ branch }}
+        name: checkout_{{ branch }}
         remote: HEAD
         branch: {{ branch }}
         email_error: mscherer@redhat.com
