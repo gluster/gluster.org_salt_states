@@ -5,6 +5,7 @@ base:
     # needed for wordpress
     - memcached.server
     - middleman.web_server
+    - mailman
   '*':
     - salt.minion
     - base.pkgs
