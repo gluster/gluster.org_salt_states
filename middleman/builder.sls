@@ -40,7 +40,7 @@ middleman_builder_{{ branch }}:
     - context:
         name: website_{{ branch }}
         result_dir: htmltext
-        build_command: "rake gen"
+        build_command: "bundle install && bundle exec middleman build"
         remote: deploy_website@www.gluster.org:/var/www/middleman_website/{{ branch }}
         branch: {{ branch }}
         email_error: mscherer@redhat.com
