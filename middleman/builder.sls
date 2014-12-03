@@ -44,6 +44,12 @@ middleman_builder_{{ branch }}:
         remote: deploy_website@www.gluster.org:/var/www/middleman_website/{{ branch }}
         branch: {{ branch }}
         email_error: mscherer@redhat.com
+# for ssh keys
+  cmd:
+    - run
+    - create: /srv/middleman_builder/.ssh/website_{{ branch }}_id.rsa
+    - name: ssh-keygen -N "" -q -f /srv/middleman_builder/.ssh/website_{{ branch }}_id.rsa -t dsa
+
 # TODO create the remote user
 # create the ssh keys on this side
 # put it in a grain on the other side
