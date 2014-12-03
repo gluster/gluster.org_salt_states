@@ -15,7 +15,8 @@ cd $DIR
 git fetch -q
 
 git pull --rebase
-eval $BUILD_COMMAND
+eval $BUILD_COMMAND >  ~/error_${NAME} 2>&1
+
 
 if [ $? -ne 0 ]; then
     if [ -n "$MAIL" ]; then
