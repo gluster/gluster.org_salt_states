@@ -59,9 +59,4 @@ middleman_builder_{{ branch }}:
 # TODO create the remote user
 # create the ssh keys on this side
 # put it in a grain on the other side
-# share the setting
-#  cron:
-#    - present
-#    - name: /usr/local/bin/build_deploy.sh website_{{ branch }} deploy_website@www.gluster.org:/var/www/middleman_website/{{ branch }}  HEAD mscherer@redhat.com
-#    - minute: '*/5'
-#   #- user: middleman_builder
+
