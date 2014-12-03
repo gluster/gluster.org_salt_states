@@ -19,7 +19,7 @@ eval $BUILD_COMMAND >  ~/error_${NAME} 2>&1
 
 
 if [ $? -ne 0 ]; then
-    if [ -n "$MAIL" ]; then
+    if [ -n "$EMAIL_ERROR" ]; then
         echo "Build failed for $NAME" | EMAIL=nobody@gluster.org mutt -s "Build failed for $NAME" $EMAIL_ERROR -a ~/error_${NAME}
     fi
     rm -f ~/lock_${NAME}
