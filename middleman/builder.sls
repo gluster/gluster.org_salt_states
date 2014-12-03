@@ -47,7 +47,7 @@ middleman_builder_{{ branch }}:
 # for ssh keys
   cmd:
     - run
-    - create: /srv/middleman_builder/.ssh/website_{{ branch }}_id.rsa
+    - creates: /srv/middleman_builder/.ssh/website_{{ branch }}_id.rsa
     - name: ssh-keygen -N "" -q -f /srv/middleman_builder/.ssh/website_{{ branch }}_id.rsa -t dsa
 
 # TODO create the remote user
