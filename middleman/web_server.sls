@@ -25,6 +25,11 @@ sshkeys_{{ host }}_{{ keyinfo.filename }}:
     - present
     - enc: {{ keyinfo.type }}
     - user: deploy_website
+    - options:
+      - no-port-forwarding
+      - no-agent-forwarding
+      - no-X11-forwarding
+      - no-pty
     - names:
       - {{ keyinfo.key }}
 {% endfor %}
