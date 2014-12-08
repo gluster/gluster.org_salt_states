@@ -11,12 +11,19 @@ def ssh_pub_keys(user='root'):
     for i in glob.glob( os.path.join(sshdir,'*.pub')):
         for l in open(i,'r+').readlines():
             ssh_type,ssh_key,ssh_comment = l.split()
+            filename = os.path.basename(i)
+            branch = ''
+            # custom code, used to transmit metadata
+            # in the filename ( a bit inelegant )
+            if filename.startwith("website_"):
+                branch = filename.split('_')[1]
             ret[os.path.basename(i)] = {
                 'type': ssh_type,
                 'key': ssh_key,
                 'comment': ssh_comment,
                 'path': i,
-                'filename': os.path.basename(i),
-		'user': user,
+                'filename': filename,
+                'user': user,
+                'branch': branch,
             }
     return ret
