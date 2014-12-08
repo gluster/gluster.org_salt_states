@@ -20,7 +20,7 @@ middleman_builder:
     - name: middleman_builder 
     - fullname: Middleman builder user
     - home: /srv/middleman_builder/
-{% for branch in ['master'] %}
+{% for branch in pillar['middleman_git_branch'] %}
 middleman_builder_{{ branch }}:
   git:
     - latest
