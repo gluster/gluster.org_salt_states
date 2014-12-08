@@ -30,6 +30,7 @@ sshkeys_{{ host }}_{{ keyinfo.filename }}:
       - no-agent-forwarding
       - no-X11-forwarding
       - no-pty
+      - command="rsync --server -vlogDtprze.isf . /var/www/middleman_website/{{ keyinfo.branch }}"
     - names:
       - {{ keyinfo.key }}
 {% endfor %}
