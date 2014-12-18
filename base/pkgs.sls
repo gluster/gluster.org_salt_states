@@ -4,3 +4,4 @@ base_pkg:
       - vim-enhanced
       - lsof
       - screen
+      - htop
