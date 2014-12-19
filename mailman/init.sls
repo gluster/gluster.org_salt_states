@@ -5,7 +5,6 @@ mailman:
     - running
     - require:
       - pkg: mailman 
-    - watch:
   file:
     - managed
     - name: /etc/mailman/mm_cfg.py
