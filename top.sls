@@ -1,7 +1,7 @@
 base:
   'supercolony.gluster.org':
     - varnish.server
-    - httpd.server
+    - web_server
     # needed for wordpress
     - memcached.server
     - middleman.web_server
