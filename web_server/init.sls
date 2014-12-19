@@ -16,6 +16,7 @@ web_configuration:
     - source: salt://web_server/ssl_custom.conf
     - name: /etc/httpd/conf.d/ssl_custom.conf
 
+www.gluster.org_http_config:
   file:
     - managed
     - source: salt://web_server/www.gluster.org.conf
@@ -24,6 +25,8 @@ web_configuration:
     - context:
         ssl: False
         port: 8080
+
+www.gluster.org_https_config
   file:
     - managed
     - source: salt://web_server/www.gluster.org.conf
