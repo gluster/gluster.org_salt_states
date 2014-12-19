@@ -14,25 +14,17 @@ web_configuration:
     - source: salt://web_server/ssl_custom.conf
     - name: /etc/httpd/conf.d/ssl_custom.conf
 
+{% for port in ['443', '8080'] %}
 {% for domain in ['www', 'blog'] %}
-{{ domain }}.gluster.org_http_config:
+{{ domain }}.gluster.org_http{% if port == '443'%}s{% endif %}_config:
   file:
     - managed
     - source: salt://web_server/{{ domain }}.gluster.org.conf
     - name: /etc/httpd/conf.d/{{ domain }}.gluster.org.conf
     - template: jinja
     - context:
-        ssl: False
-        port: 8080
-
-{{ domain }}.gluster.org_https_config:
-  file:
-    - managed
-    - source: salt://web_server/{{ domain }}.gluster.org.conf
-    - name: /etc/httpd/conf.d/{{ domain }}.gluster.org_ssl.conf
-    - template: jinja
-    - context:
-        ssl: True
-        port: 443
+        ssl: {% if port == '443'%}True{% else %}False{% endif %}
+        port: {{ port }}
+{% endfor %}
 {% endfor %}
  
