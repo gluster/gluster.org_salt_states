@@ -20,7 +20,7 @@ web_configuration:
   file:
     - managed
     - source: salt://web_server/{{ domain }}.gluster.org.conf
-    - name: /etc/httpd/conf.d/{{ domain }}.gluster.org.conf
+    - name: /etc/httpd/conf.d/{{ domain }}.gluster.org{% if port == '443'%}_ssl{% endif %}.conf
     - template: jinja
     - context:
         ssl: {% if port == '443'%}True{% else %}False{% endif %}
