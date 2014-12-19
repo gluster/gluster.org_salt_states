@@ -7,7 +7,6 @@ include:
 # /etc/httpd/conf.d/ilbot.conf
 # /etc/httpd/conf.d/mediawiki_upload_security.conf
 
-#TODO notify apache to reload
 web_configuration:
   file:
     - managed
@@ -22,6 +21,8 @@ web_configuration:
     - source: salt://web_server/{{ domain }}.gluster.org.conf
     - name: /etc/httpd/conf.d/{{ domain }}.gluster.org{% if port == '443'%}_ssl{% endif %}.conf
     - template: jinja
+    - watch_in:
+        - service: httpd
     - context:
         ssl: {% if port == '443'%}True{% else %}False{% endif %}
         port: {{ port }}
