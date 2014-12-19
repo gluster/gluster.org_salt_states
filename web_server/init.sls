@@ -12,8 +12,25 @@ include:
 #TODO notify apache to reload
 web_configuration:
   file:
+    - managed
     - source: salt://web_server/ssl_custom.conf
     - name: /etc/httpd/conf.d/ssl_custom.conf
+
+  file:
     - managed
+    - source: salt://web_server/www.gluster.org.conf
+    - name: /etc/httpd/conf.d/www.gluster.org.conf
+    - template: jinja
+    - context:
+        ssl: False
+        port: 8080
+  file:
+    - managed
+    - source: salt://web_server/www.gluster.org.conf
+    - name: /etc/httpd/conf.d/www.gluster.org_ssl.conf
+    - template: jinja
+    - context:
+        ssl: True
+        port: 443
 
  
