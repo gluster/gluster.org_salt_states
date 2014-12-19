@@ -85,8 +85,8 @@ try:
 except:
     fqdn = 'mm_cfg_has_unknown_host_domains'
 
-DEFAULT_URL_HOST   = fqdn
-DEFAULT_EMAIL_HOST = fqdn
+DEFAULT_URL_HOST   = 'www.gluster.org'
+DEFAULT_EMAIL_HOST = 'gluster.org'
 
 # Because we've overriden the virtual hosts above add_virtualhost
 # MUST be called after they have been defined.
