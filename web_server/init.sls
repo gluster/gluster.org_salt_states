@@ -26,7 +26,7 @@ www.gluster.org_http_config:
         ssl: False
         port: 8080
 
-www.gluster.org_https_config
+www.gluster.org_https_config:
   file:
     - managed
     - source: salt://web_server/www.gluster.org.conf
