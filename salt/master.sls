@@ -24,3 +24,5 @@ git_repos:
 
 # TODO
 #  add the script in post-receive that extract everything
+#  make sure the repo used the shared options
+#  have proper groups set for write access 
