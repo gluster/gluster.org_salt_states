@@ -3,6 +3,7 @@ salt-minion:
     - installed
   service:
     - running
+    - enable: True
     - require:
       - pkg: salt-minion
     - watch:
