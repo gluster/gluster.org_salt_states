@@ -3,6 +3,7 @@ httpd:
     - installed
   service:
     - running
+    - enable: True
     - require:
       - pkg: httpd
 

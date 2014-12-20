@@ -3,6 +3,7 @@ varnish:
     - installed
   service:
     - running
+    - enable: True
     - names:
       - varnish
       - varnishncsa

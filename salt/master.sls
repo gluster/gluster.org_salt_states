@@ -3,6 +3,7 @@ salt-master:
     - installed
   service:
     - running
+    - enable: True
     - require:
       - pkg: salt-master
   cron.present:
