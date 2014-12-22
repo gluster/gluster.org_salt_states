@@ -27,7 +27,7 @@ if [ $? -ne 0 ]; then
 fi
 
 rm -f ~/error_${NAME}
-rsync -e "ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i $HOME/.ssh/${NAME}_id.rsa" -rqavz $DIR/$RESULT_DIR $REMOTE/
+rsync -e "ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i $HOME/.ssh/${NAME}_id.rsa" -rqavz $DIR/$RESULT_DIR/ $REMOTE/
 
 date > ~/last_update_$NAME
 rm -f ~/lock_${NAME}
