@@ -10,6 +10,9 @@ base:
     - salt.minion
     - base.pkgs
     - ntp
+  'os_family:RedHat':
+    - match: grain
+    - yum_cron
   'salt-master.*':
     - salt.master
   'webbuilder.*':
