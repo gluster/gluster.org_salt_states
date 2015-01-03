@@ -1,5 +1,5 @@
 yum-cron:
-  pkg
+  pkg:
     - installed
   service:
     - running
