@@ -13,6 +13,8 @@ base:
   'os_family:RedHat':
     - match: grain
     - yum_cron
+  'slave*.cloud.gluster.org':
+    - jenkins.slave
   'salt-master.*':
     - salt.master
   'webbuilder.*':
