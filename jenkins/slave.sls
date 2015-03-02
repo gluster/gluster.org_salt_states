@@ -30,3 +30,9 @@ disable_ipv6_network:
     - name: /etc/sysconfig/network
     - pattern: ^NETWORKING_IPV6=yes
     - repl: NETWORKING_IPV6=no
+disableipv6_sysctl:
+  file.append:
+    - name: /etc/sysctl.conf
+    - text:
+      - net.ipv6.conf.all.disable_ipv6 = 1
+      - net.ipv6.conf.default.disable_ipv6 = 1
