@@ -76,3 +76,8 @@ jenkins_keys_{{ key.enc }}:
       - user: jenkins
     - dir_mode: 755
 {% endfor %}
+
+git://forge.gluster.org/gluster-patch-acceptance-tests/gluster-patch-acceptance-tests.git:
+  git.latest:
+    - target: /opt/qa
+
