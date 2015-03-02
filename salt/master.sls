@@ -30,6 +30,14 @@ deploy_script:
     - name: /usr/local/bin/deploy_salt.sh
     - source: salt://salt/deploy_salt.sh
 
+post_receive_sudoers:
+  pkg.installed:
+    - name: sudo
+  file:
+    - managed
+    - name: /etc/sudoers.d/admins
+    - content: '%admins NOPASSWD: ALL=(ALL)'
+
 # TODO
 #  add the script in post-receive that extract everything
 #  make sure the repo used the shared options
