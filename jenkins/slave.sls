@@ -62,4 +62,6 @@ jenkins_keys_{{ key.enc }}:
     - user: jenkins
     - enc: {{ key.enc }}
     - fingerprint: {{ key.fingerprint }}
+    - require:
+      - user: jenkins 
 {% endfor %}
