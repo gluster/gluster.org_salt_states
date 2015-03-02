@@ -96,6 +96,6 @@ nginx:
     - installed
   service:
     - running
-  file.symlink:
+  file.copy:
     - name: /etc/nginx/conf.d/default.conf
-    - target: /opt/qa/nginx/default.conf
+    - source: /opt/qa/nginx/default.conf
