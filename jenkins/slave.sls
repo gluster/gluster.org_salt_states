@@ -58,6 +58,7 @@ jenkins_user:
 {% for key in pillar['ssh_fingerprints']['review.gluster.org'] %}
 jenkins_keys_{{ key.enc }}:
   ssh_known_hosts.present:
+    - name: review.gluster.org
     - user: jenkins
     - enc: {{ key.enc }}
     - fingerprint: {{ key.fingerprint }}
