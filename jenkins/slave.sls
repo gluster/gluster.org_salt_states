@@ -8,6 +8,7 @@ jenkins_slave:
       - nfs-utils 
       - yajl 
       - perl-Test-Harness
+      - java-1.7.0-openjdk
   user.present:
     - name: mock
     - groups:
