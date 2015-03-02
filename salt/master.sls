@@ -41,7 +41,7 @@ post_receive_sudoers:
   file:
     - managed
     - name: /etc/sudoers.d/admins
-    - contents: '%admins NOPASSWD: ALL=(ALL)'
+    - contents: '%admins ALL=(ALL) NOPASSWD: /usr/local/bin/deploy_salt.sh'
 
 # TODO
 #  add the script in post-receive that extract everything
