@@ -16,7 +16,7 @@ jenkins_slave:
     - require:
       - pkg: mock
   file.comment:
-    - path: /etc/hosts
+    - name: /etc/hosts
     - regex:
       - ^10\.
       - ^2001
