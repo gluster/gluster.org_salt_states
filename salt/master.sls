@@ -11,14 +11,19 @@ salt-master:
     - minute: '*/30'
     - name: salt -t 60 '*' state.highstate
 
+# TODO set the permission on the directory
 git_repos:
   pkg.installed:
     - names:
       - git
   file.directory:
     - name: /srv/git_repos
+
   git.present:
     - names:
+# uncomment once first version in 2015 is out, with
+# https://github.com/saltstack/salt/pull/19046
+#   - shared: group
 {% for repo in ['states', 'pillar', 'pillar_private'] %}
       - /srv/git_repos/{{ repo }}
 {% endfor %}
