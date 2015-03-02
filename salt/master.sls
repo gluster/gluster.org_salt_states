@@ -23,6 +23,13 @@ git_repos:
       - /srv/git_repos/{{ repo }}
 {% endfor %}
 
+deploy_script:
+  file:
+    - managed
+    - mode: 755
+    - name: /usr/local/bin/deploy_salt.sh
+    - source: salt://salt/deploy_salt.sh
+
 # TODO
 #  add the script in post-receive that extract everything
 #  make sure the repo used the shared options
