@@ -41,7 +41,7 @@ post_receive_sudoers:
   file:
     - managed
     - name: /etc/sudoers.d/admins
-    - content: '%admins NOPASSWD: ALL=(ALL)'
+    - contents: '%admins NOPASSWD: ALL=(ALL)'
 
 # TODO
 #  add the script in post-receive that extract everything
