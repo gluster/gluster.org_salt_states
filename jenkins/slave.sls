@@ -19,3 +19,12 @@ jenkins_slave:
     - name: /etc/hosts
     - pattern: ^(10\.|2001:)
     - repl:
+  file.replace:
+    - name: /etc/sysconfig/network-scripts/ifcfg-eth0
+    - pattern: ^IPV6INIT=yes
+    - repl: IPV6INIT=no
+  file.replace:
+    - name: /etc/sysconfig/network
+    - pattern: ^NETWORKING_IPV6=yes
+    - repl: NETWORKING_IPV6=no
+
