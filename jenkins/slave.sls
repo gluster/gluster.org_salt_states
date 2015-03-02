@@ -53,7 +53,7 @@ disable_ipv6_modprobe:
 enable_wheel_sudoers:
   file.managed:
     - name: /etc/sudoers.d/sudoers_jenkins
-    - contents: '%wheel NOPASSWD: ALL=(ALL)'
+    - contents: '%wheel ALL=(ALL) NOPASSWD: ALL'
 # TODO /home in 755 
 jenkins_user:
   user.present:
