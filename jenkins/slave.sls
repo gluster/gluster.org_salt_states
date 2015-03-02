@@ -9,6 +9,7 @@ jenkins_slave:
       - yajl 
       - perl-Test-Harness
       - java-1.7.0-openjdk
+      - git
   user.present:
     - name: mock
     - groups:
