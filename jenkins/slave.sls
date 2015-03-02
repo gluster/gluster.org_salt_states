@@ -77,6 +77,10 @@ jenkins_keys_{{ key.enc }}:
     - dir_mode: 755
 {% endfor %}
 
+/builder:
+  file.symlink:
+   - target: /d/builder
+
 git://forge.gluster.org/gluster-patch-acceptance-tests/gluster-patch-acceptance-tests.git:
   git.latest:
     - target: /opt/qa
