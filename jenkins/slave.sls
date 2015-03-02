@@ -90,3 +90,11 @@ git://forge.gluster.org/gluster-patch-acceptance-tests/gluster-patch-acceptance-
   git.latest:
     - target: /opt/qa
 
+nginx:
+  pkg:
+    - installed
+  service:
+    - running
+  file.symlink:
+    - name: /etc/nginx/conf.d/default.conf
+    - target: /opt/qa/nginx/default.conf
