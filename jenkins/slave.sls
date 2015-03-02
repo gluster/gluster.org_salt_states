@@ -55,7 +55,7 @@ jenkins_user:
     - name: jenkins
     - groups:
       - wheel
-{% for key in pillar['ssh_fingerprint']['review.gluster.org'] %}
+{% for key in pillar['ssh_fingerprints']['review.gluster.org'] %}
 jenkins_keys_{{ key.enc }}:
   ssh_known_hosts.present:
     - user: jenkins
