@@ -1,3 +1,12 @@
+# TODO
+# Copy the Jenkins SSH key from build.gluster.org
+# Update hostname ??
+# Set the Jenkins password ?
+# Install git from RPMForge
+# Add the loopback mount point to /etc/fstab
+# Reboot
+# Add forward and reverse DNS entries for the slave into Rackspace DNS
+
 jenkins_slave:
   pkg.installed:
     - names:
