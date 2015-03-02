@@ -66,8 +66,8 @@ jenkins_keys_{{ key.enc }}:
       - user: jenkins 
 {% endfor %}
 
-{% for dir in [ 'archived_builds', 'log' ] %}
-/archives/{{ dir }}:
+{% for dir in [ '/var/log/glusterfs', '/var/lib/glusterd', '/var/run/gluster',  '/d/archived_builds', '/d/backends', '/d/build', '/d/logs', '/home/jenkins/root', '/archives/archived_builds', '/archives/log' ] %}
+{{ dir }}:
   file.directory:
     - user: jenkins
     - groups: jenkins
