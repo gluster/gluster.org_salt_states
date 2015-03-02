@@ -45,3 +45,7 @@ disable_ipv6_modprobe:
   file.managed:
     - name: /etc/modprobe.d/ipv6.conf
     - contents: options ipv6 disable=1
+enable_wheel_sudoers:
+  file.managed:
+    - name: /etc/sudoers.d/sudoers_jenkins
+    - contents: %wheel NOPASSWD: ALL=(ALL)
