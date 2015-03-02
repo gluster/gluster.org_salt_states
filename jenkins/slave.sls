@@ -65,3 +65,14 @@ jenkins_keys_{{ key.enc }}:
     - require:
       - user: jenkins 
 {% endfor %}
+
+{% for dir in [ 'archived_builds', 'log' ] %}
+/archives/{{ dir }}:
+  file.directory:
+    - user: jenkins
+    - groups: jenkins
+    - makedirs: True
+    - require:
+      - user: jenkins
+    - dir_mode: 755
+{% endfor %}
