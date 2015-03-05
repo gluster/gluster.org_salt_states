@@ -1,0 +1,8 @@
+#!/bin/bash
+
+while read OLDREV NEWREV REF
+do
+        # here just as a place holder
+        true
+done
+sudo /usr/local/bin/deploy_salt.sh
