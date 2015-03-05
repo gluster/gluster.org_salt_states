@@ -7,8 +7,8 @@
 # Reboot
 # Add forward and reverse DNS entries for the slave into Rackspace DNS
 include:
-  - jenkins.disable_ipv6
-  - jenkins.fix_rackspace_network
+  - .disable_ipv6
+  - .fix_rackspace_network
 
 jenkins_slave:
   pkg.installed:
