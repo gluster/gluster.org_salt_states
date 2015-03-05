@@ -1,0 +1,1 @@
+%admins ALL=(ALL) NOPASSWD: /usr/local/bin/deploy_salt.sh

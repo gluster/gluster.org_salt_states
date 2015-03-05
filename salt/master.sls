@@ -68,7 +68,7 @@ post_receive_sudoers:
   file:
     - managed
     - name: /etc/sudoers.d/admins
-    - contents: '%admins ALL=(ALL) NOPASSWD: /usr/local/bin/deploy_salt.sh'
+    - source: salt://salt/admins.sudoers
 
 # TODO
 #  make sure the repo used the shared options
