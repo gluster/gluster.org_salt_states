@@ -4,7 +4,7 @@ admin_{{ admin }}_authkeys:
     - present
     - user: root
     - names:
-      {% for key in admin.ssh_keys %}
+      {% for key in pillar['admins'][admin]['ssh_keys'] %}
       - {{ key }}
       {% endfor %}
 {% endfor %}
