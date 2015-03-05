@@ -22,7 +22,7 @@ salt-master:
 # TODO set the permission on the directory
 git:
   pkg:
-    - .installed:
+    - installed
   file.directory:
     - name: /srv/git_repos
 
