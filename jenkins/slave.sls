@@ -73,6 +73,12 @@ nginx:
     - installed
   service:
     - running
+    - enable: True
+    - require:
+      - pkg: nginx
   file.copy:
     - name: /etc/nginx/conf.d/default.conf
     - source: /opt/qa/nginx/default.conf
+    - require:
+      - pkg: nginx
+      - git: git://forge.gluster.org/gluster-patch-acceptance-tests/gluster-patch-acceptance-tests.git
