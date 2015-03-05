@@ -1,1 +1,3 @@
 %admins ALL=(ALL) NOPASSWD: /usr/local/bin/deploy_salt.sh
+Defaults!/usr/local/bin/deploy_salt.sh  !requiretty
+
