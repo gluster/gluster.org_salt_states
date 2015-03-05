@@ -8,6 +8,7 @@
 # Add forward and reverse DNS entries for the slave into Rackspace DNS
 include:
   - jenkins.disable_ipv6
+  - jenkins.fix_rackspace_network
 
 jenkins_slave:
   pkg.installed:
@@ -27,21 +28,6 @@ jenkins_slave:
       - mock
     - require:
       - pkg: mock
-disable_hosts:
-  file.replace:
-    - name: /etc/hosts
-    - pattern: ^(10\.|2001:)
-    - repl:
-enable_eth0:
-  file.replace:
-    - name: /etc/sysconfig/network-scripts/ifcfg-eth0
-    - pattern: ^ONBOOT=no
-    - repl: ONBOOT=yes
-disable_eth1:
-  file.replace:
-    - name: /etc/sysconfig/network-scripts/ifcfg-eth1
-    - pattern: ^ONBOOT=yes
-    - repl: ONBOOT=no
 enable_wheel_sudoers:
   file.managed:
     - name: /etc/sudoers.d/sudoers_jenkins
