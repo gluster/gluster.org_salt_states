@@ -9,6 +9,7 @@ base:
   '*':
     - salt.minion
     - base.pkgs
+    - base.ssh_keys
     - ntp
   'os_family:RedHat':
     - match: grain
