@@ -30,9 +30,9 @@ git:
 git_repos_{{ repo.name }}:
   file.directory:
     {% if repo.public %}
-    - mode: 755
+    - mode: 2775
     {% else %}
-    - mode: 750
+    - mode: 2770
     {% endif %}
     - owner: root
 # TODO put the group in a pillar
