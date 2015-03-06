@@ -7,6 +7,7 @@ openssh:
   service:
     - running
     - enable: True
+    - name: sshd
     - require:
       - pkg: openssh-server
     - watch:
