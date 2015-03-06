@@ -26,22 +26,24 @@ git:
   file.directory:
     - name: /srv/git_repos
 
-git_repos:
-  file.directory:
-    - mode: 755
-    - owner: root
-# TODO group
-    - names:
 {% for repo in git_repos %}
+git_repos_{{ repo.name }}:
+  file.directory:
+    {% if repo.public %}
+    - mode: 755
+    {% else %}
+    - mode: 750
+    {% endif %}
+    - owner: root
+# TODO put the group in a pillar
+    - groups: admins
+    - names:
       - /srv/git_repos/{{ repo.name }}
-{% endfor %}
-
   git.present:
     - names:
 # uncomment once first version in 2015 is out, with
 # https://github.com/saltstack/salt/pull/19046
 #   - shared: group
-{% for repo in git_repos %}
       - /srv/git_repos/{{ repo.name }}
 {% endfor %}
 
