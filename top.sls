@@ -11,6 +11,7 @@ base:
     - base.pkgs
     - base.ssh_keys
     - ntp
+    - openssh
   'os_family:RedHat':
     - match: grain
     - yum_cron
