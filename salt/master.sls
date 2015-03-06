@@ -36,7 +36,7 @@ git_repos_{{ repo.name }}:
     {% endif %}
     - owner: root
 # TODO put the group in a pillar
-    - groups: admins
+    - group: admins
     - names:
       - /srv/git_repos/{{ repo.name }}
   git.present:
