@@ -18,6 +18,7 @@ openssh:
     - watch:
       - file: /etc/ssh/sshd_config
   file.managed:
+    - name: /etc/ssh/sshd_config
     - mode: 644
     - user: root
     - group: root
@@ -32,6 +33,9 @@ openssh:
         UseDNS no
         UsePAM yes
         UsePrivilegeSeparation sandbox
+    - check_cmd: sshd -t -f
+    - source: salt://openssh/sshd_config
+
 
 {% if grains['kernel'] == 'Linux' %}
 openssh_fw:
