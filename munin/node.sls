@@ -1,5 +1,5 @@
 mine_functions:
-  test.ping:
+  test.ping: []
 
 munin-node:
   pkg:
