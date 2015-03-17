@@ -14,8 +14,7 @@ web_configuration:
     file:
     - managed
     - source: salt://munin/vhost.conf
-    # TODO do not hardcode the domain name
-    - name: /etc/httpd/conf.d/munin.gluster.org.conf
+    - name: /etc/httpd/conf.d/{{ salt['grains.get']('nodename') }} .conf
     - watch_in:
         - service: httpd
 
