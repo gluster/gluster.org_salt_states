@@ -1,3 +1,6 @@
+mine_functions:
+  test.ping:
+
 munin-node:
   pkg:
     - installed
