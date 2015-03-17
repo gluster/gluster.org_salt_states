@@ -18,6 +18,8 @@ base:
   'slave*.cloud.gluster.org':
     - jenkins.slave
     - munin.node
+  'munin.*':
+    - munin.master
   'salt-master.*':
     - salt.master
   'webbuilder.*':
