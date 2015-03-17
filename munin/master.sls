@@ -18,12 +18,12 @@ web_configuration:
     - watch_in:
         - service: httpd
 
-{% for name, data in salt['mine.get']('roles:munin-node', 'test.ping', expr_form='grain').items() %}
+{% for node, data in salt['mine.get']('roles:munin-node', 'test.ping', expr_form='grain').items() %}
 
-config_{{ name }}:
+config_{{ node }}:
   file:
     - managed
     - template: jinja
-    - name: /etc/munin/conf.d/{{ name }}.conf
+    - name: /etc/munin/conf.d/{{ node }}.conf
     - source: salt://munin/node.conf
 {% endfor %}
