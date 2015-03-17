@@ -1,6 +1,3 @@
-mine_functions:
-  network.ip_addrs: [eth0]
-
 munin-node:
   pkg:
     - installed
