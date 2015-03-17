@@ -2,6 +2,11 @@ munin-master:
   pkg:
     - installed
     - name: munin
+  grains:
+    - list_present
+    - value: munin-master
+    - name: roles
+
 {% for name in salt['mine.get']('roles:munin-node', 'test.ping', expr_form='grain').items() %}
 
 config_{{ name }}:
