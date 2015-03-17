@@ -8,8 +8,8 @@ config_{{ name }}:
   file:
     - managed
     - name: /etc/munin/conf.d/{{ name }}.conf
-    - contents: |
+    - contents: "
       [{{ name }}]
         address {{ name }}
-        use_node_name yes
+        use_node_name yes"
 {% endfor %}
