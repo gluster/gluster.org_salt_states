@@ -1,3 +1,6 @@
+include:
+    - httpd.server
+
 munin-master:
   pkg:
     - installed
@@ -6,6 +9,15 @@ munin-master:
     - list_present
     - value: munin-master
     - name: roles
+
+web_configuration:
+    file:
+    - managed
+    - source: salt://munin/vhost.conf
+    # TODO do not hardcode the domain name
+    - name: /etc/httpd/conf.d/munin.gluster.org.conf
+    - watch_in:
+        - service: httpd
 
 {% for name in salt['mine.get']('roles:munin-node', 'test.ping', expr_form='grain').items() %}
 
