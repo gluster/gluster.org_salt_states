@@ -24,8 +24,5 @@ config_{{ name }}:
   file:
     - managed
     - name: /etc/munin/conf.d/{{ name }}.conf
-    - contents: "
-      [{{ name }}]
-        address {{ name }}
-        use_node_name yes"
+    - source: salt://munin/node.conf
 {% endfor %}
