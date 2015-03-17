@@ -18,7 +18,7 @@ web_configuration:
     - watch_in:
         - service: httpd
 
-{% for name in salt['mine.get']('roles:munin-node', 'test.ping', expr_form='grain').items() %}
+{% for name, data in salt['mine.get']('roles:munin-node', 'test.ping', expr_form='grain').items() %}
 
 config_{{ name }}:
   file:
