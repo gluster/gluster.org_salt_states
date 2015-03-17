@@ -17,6 +17,7 @@ base:
     - yum_cron
   'slave*.cloud.gluster.org':
     - jenkins.slave
+    - munin.node
   'salt-master.*':
     - salt.master
   'webbuilder.*':
