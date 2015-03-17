@@ -23,6 +23,7 @@ web_configuration:
 config_{{ name }}:
   file:
     - managed
+    - template: jinja
     - name: /etc/munin/conf.d/{{ name }}.conf
     - source: salt://munin/node.conf
 {% endfor %}
