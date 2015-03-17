@@ -14,7 +14,7 @@ web_configuration:
     file:
     - managed
     - source: salt://munin/vhost.conf
-    - name: /etc/httpd/conf.d/{{ salt['grains.get']('nodename') }} .conf
+    - name: /etc/httpd/conf.d/{{ salt['grains.get']('nodename') }}.conf
     - watch_in:
         - service: httpd
 
