@@ -18,3 +18,14 @@ openssh:
 #    - pattern: ^PermitRootLogin
 #    - repl: PermitRootLogin=without-password
 
+openssh_fw:
+  iptables:
+    - append
+    - table: filter
+    # remove once 2015 is out
+    - match: tcp
+    - chain: INPUT
+    - dport: 22
+    - protocol: tcp
+    - jump: ACCEPT
+
