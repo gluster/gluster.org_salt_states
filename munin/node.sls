@@ -14,5 +14,6 @@ munin-node:
     - managed
     - source: salt://munin/munin-node.conf
     - name: /etc/munin/munin-node.conf 
+    - template: jinja
     - watch_in:
         - service: munin-node
