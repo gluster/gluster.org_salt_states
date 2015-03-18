@@ -26,4 +26,6 @@ config_{{ node }}:
     - template: jinja
     - name: /etc/munin/conf.d/{{ node }}.conf
     - source: salt://munin/node.conf
+    - context: 
+      node: {{ node }}
 {% endfor %}
