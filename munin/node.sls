@@ -19,6 +19,7 @@ munin-node:
         - service: munin-node
   iptables:
     - append
+    - table: filter
     - chain: INPUT
     - port: 4949
     # TODO do not hardcode
