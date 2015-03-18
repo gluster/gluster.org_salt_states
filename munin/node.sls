@@ -17,3 +17,10 @@ munin-node:
     - template: jinja
     - watch_in:
         - service: munin-node
+  iptables:
+    - build_rule
+    - port: 4949
+    # TODO do not hardcode
+    - source: 104.130.25.92
+    - protocol: tcp
+    - jump: ACCEPT
