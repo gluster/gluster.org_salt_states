@@ -20,8 +20,10 @@ base:
     - munin.node
   'munin.*':
     - munin.master
+    - munin.node
   'salt-master.*':
     - salt.master
+    - munin.node
   'webbuilder.*':
     - middleman.builder
     - awestruct.builder
