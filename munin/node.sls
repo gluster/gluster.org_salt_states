@@ -10,3 +10,9 @@ munin-node:
     - list_present
     - value: munin-node
     - name: roles
+  file:
+    - managed
+    - source: salt://munin/munin-node.conf
+    - name: /etc/munin/munin-node.conf 
+    - watch_in:
+        - service: munin-node
