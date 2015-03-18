@@ -21,7 +21,7 @@ munin-node:
     - append
     - table: filter
     - chain: INPUT
-    - port: 4949
+    - dport: 4949
     # TODO do not hardcode
     - source: 104.130.25.92
     - protocol: tcp
