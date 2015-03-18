@@ -20,6 +20,8 @@ munin-node:
   iptables:
     - append
     - table: filter
+    # remove once 2015 is out
+    - match: tcp
     - chain: INPUT
     - dport: 4949
     # TODO do not hardcode
