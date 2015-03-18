@@ -18,7 +18,8 @@ munin-node:
     - watch_in:
         - service: munin-node
   iptables:
-    - build_rule
+    - append
+    - chain: INPUT
     - port: 4949
     # TODO do not hardcode
     - source: 104.130.25.92
