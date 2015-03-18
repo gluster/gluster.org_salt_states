@@ -19,6 +19,19 @@ salt-master:
     - minute: '*/30'
     - name: salt -t 60 '*' state.highstate
 
+{% for port in ['4505', '4506'] %}
+open_port_{{ port }}:
+  iptables:
+    - append
+    - table: filter
+    # remove once 2015 is out
+    - match: tcp
+    - chain: INPUT
+    - dport: {{ port }}
+    - protocol: tcp
+    - jump: ACCEPT
+{% endfor %}
+
 # TODO set the permission on the directory
 git:
   pkg:
