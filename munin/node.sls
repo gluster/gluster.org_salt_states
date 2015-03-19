@@ -24,7 +24,7 @@ munin-node:
     - name: {{ munin_node.config_path }}/munin-node.conf
     - template: jinja
     - context:
-      log_dir: {{ pkg.log_dir }}
+      log_dir: {{ munin_node.log_dir }}
     - watch_in:
         - service: {{ munin_node.service }}
 {% if grains['kernel'] == 'Linux' %}
