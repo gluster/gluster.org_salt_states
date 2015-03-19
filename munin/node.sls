@@ -1,6 +1,6 @@
 {% set munin_node = salt['grains.filter_by']({
-      'RedHat':  {'pkg': 'munin-node', 'service': 'munin-node', 'config_path': "/etc/munin/"},
-      'FreeBSD': {'pkg': 'munin-node', 'service': 'munin-node', 'config_path': "/usr/local/etc/munin/"},
+      'RedHat':  {'pkg': 'munin-node', 'service': 'munin-node', 'config_path': "/etc/munin/",           'log_dir': "munin-node" },
+      'FreeBSD': {'pkg': 'munin-node', 'service': 'munin-node', 'config_path': "/usr/local/etc/munin/", 'log_dir': "munin" },
    }, default='RedHat')
 %}
 
@@ -23,6 +23,8 @@ munin-node:
     - source: salt://munin/munin-node.conf
     - name: {{ munin_node.config_path }}/munin-node.conf
     - template: jinja
+    - context:
+      log_dir: {{ pkg.log_dir }}
     - watch_in:
         - service: {{ munin_node.service }}
 {% if grains['kernel'] == 'Linux' %}
