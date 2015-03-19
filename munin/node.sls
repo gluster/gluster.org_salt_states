@@ -1,11 +1,19 @@
+{% set munin_node = salt['grains.filter_by']({
+      'RedHat':  {'pkg': 'munin-node', 'service': 'munin-node', 'config_path': "/etc/munin/"},
+      'FreeBSD': {'pkg': 'py27-salt',        'service': 'salt_minion', 'config_path': "/usr/local/etc/salt/"},
+   }, default='RedHat')
+%}
+
 munin-node:
   pkg:
     - installed
+    - name: {{ munin_node.pkg }}
   service:
     - running
+    - name: {{ munin_node.service }}
     - enable: True
     - require:
-      - pkg: munin-node
+      - pkg: {{ munin_node.pkg }}
   grains:
     - list_present
     - value: munin-node
@@ -13,10 +21,11 @@ munin-node:
   file:
     - managed
     - source: salt://munin/munin-node.conf
-    - name: /etc/munin/munin-node.conf 
+    - name: {{ munin_node.config_path }}/munin-node.conf
     - template: jinja
     - watch_in:
-        - service: munin-node
+        - service: {{ munin_node.service }}
+{% if grains['kernel'] == 'Linux' %}
   iptables:
     - append
     - table: filter
@@ -28,3 +37,4 @@ munin-node:
     - source: 104.130.25.92
     - protocol: tcp
     - jump: ACCEPT
+{% endif %}
