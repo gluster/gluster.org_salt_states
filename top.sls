@@ -21,6 +21,8 @@ base:
   'munin.*':
     - munin.master
     - munin.node
+  'freebsd0.*':
+    - munin.node
   'salt-master.*':
     - salt.master
     - munin.node
