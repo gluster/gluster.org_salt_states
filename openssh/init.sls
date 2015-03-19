@@ -11,8 +11,10 @@ openssh:
     - running
     - enable: True
     - name: sshd
+{% if grains['kernel'] == 'Linux' %}
     - require:
       - pkg: openssh-server
+{% endif %}
 #    - watch:
 #      - file: /etc/ssh/sshd_config
 #  file:
