@@ -41,3 +41,12 @@ munin-node:
     - protocol: tcp
     - jump: ACCEPT
 {% endif %}
+{% if grains['kernel'] == 'FreeBSD' %}
+configure munin on Freebsd:
+  cmd:
+    - run
+    - cwd: /
+    - name: /usr/local/sbin/munin-node-configure --shell | sh -x
+    - creates: /usr/local/etc/munin/plugins/uptime
+{% endif %}
+
