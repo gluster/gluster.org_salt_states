@@ -1,6 +1,6 @@
 {% set saltstack = salt['grains.filter_by']({
       'RedHat':  {'pkg': 'salt-minion', 'service': 'salt-minion', 'config_path': "/etc/salt/"},
-      'FreeBSD': {'pkg': 'salt',        'service': 'salt_minion', 'config_path': "/usr/local/etc/salt/"},
+      'FreeBSD': {'pkg': 'py27-salt',        'service': 'salt_minion', 'config_path': "/usr/local/etc/salt/"},
    }, default='RedHat')
 %}
 
