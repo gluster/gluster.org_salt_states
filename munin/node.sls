@@ -1,6 +1,6 @@
 {% set munin_node = salt['grains.filter_by']({
       'RedHat':  {'pkg': 'munin-node', 'service': 'munin-node', 'config_path': "/etc/munin/"},
-      'FreeBSD': {'pkg': 'py27-salt',        'service': 'salt_minion', 'config_path': "/usr/local/etc/salt/"},
+      'FreeBSD': {'pkg': 'munin-node', 'service': 'munin-node', 'config_path': "/usr/local/etc/salt/"},
    }, default='RedHat')
 %}
 
