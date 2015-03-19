@@ -8,16 +8,16 @@
 salt-minion:
   pkg:
     - installed
-    - name: {{ salt.pkg }}
+    - name: {{ saltstack.pkg }}
   service:
     - running
     - enable: True
     - require:
-      - pkg: {{ salt.pkg }}
+      - pkg: {{ saltstack.pkg }}
     - watch:
-      - file: {{ salt.config_path }}/minion.d/mine.conf
-    - name: {{ salt.service }}
+      - file: {{ saltstack.config_path }}/minion.d/mine.conf
+    - name: {{ saltstack.service }}
   file:
     - managed
-    - name: {{ salt.config_path }}/minion.d/mine.conf
+    - name: {{ saltstack.config_path }}/minion.d/mine.conf
     - contents: "mine_interval: 60"
