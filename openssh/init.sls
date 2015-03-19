@@ -1,9 +1,12 @@
 openssh:
+  # * BSD have openssh in the base system
+{% if grains['kernel'] == 'Linux' %}
   pkg:
     - installed
     - names:
       - openssh-server
       - openssh
+{% endif %}
   service:
     - running
     - enable: True
