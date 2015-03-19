@@ -17,7 +17,7 @@ openssh:
 #    - name: /etc/ssh/sshd_config
 #    - pattern: ^PermitRootLogin
 #    - repl: PermitRootLogin=without-password
-
+{% if kernel == 'Linux' %}
 openssh_fw:
   iptables:
     - append
@@ -28,4 +28,4 @@ openssh_fw:
     - dport: 22
     - protocol: tcp
     - jump: ACCEPT
-
+{% endif %}
