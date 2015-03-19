@@ -17,7 +17,7 @@ openssh:
 #    - name: /etc/ssh/sshd_config
 #    - pattern: ^PermitRootLogin
 #    - repl: PermitRootLogin=without-password
-{% if kernel == 'Linux' %}
+{% if grains['kernel'] == 'Linux' %}
 openssh_fw:
   iptables:
     - append
