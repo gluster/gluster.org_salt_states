@@ -12,20 +12,18 @@ base:
     - base.ssh_keys
     - ntp
     - openssh
+    - munin.node
   'os_family:RedHat':
     - match: grain
     - yum_cron
   'slave*.cloud.gluster.org':
     - jenkins.slave
-    - munin.node
   'munin.*':
     - munin.master
-    - munin.node
   'freebsd0.*':
     - munin.node
   'salt-master.*':
     - salt.master
-    - munin.node
   'webbuilder.*':
     - middleman.builder
     - awestruct.builder
