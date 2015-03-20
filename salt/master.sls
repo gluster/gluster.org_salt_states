@@ -108,7 +108,7 @@ jenkins_profile:
     - managed
     - mode: 700
     - name: /etc/salt/cloud.profiles.d/jenkins.conf
-    - source: salt://salt/jenkins.conf
+    - source: salt://salt/jenkins.profileconf
     - require:
       - pkg: salt-cloud
   
