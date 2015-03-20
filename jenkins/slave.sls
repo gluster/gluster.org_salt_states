@@ -28,16 +28,20 @@ jenkins_slave:
       - mock
     - require:
       - pkg: mock
+
 enable_wheel_sudoers:
   file.managed:
     - name: /etc/sudoers.d/sudoers_jenkins
     - contents: '%wheel ALL=(ALL) NOPASSWD: ALL'
+
 # TODO /home in 755 
 jenkins_user:
   user.present:
     - name: jenkins
     - groups:
       - wheel
+    - passwd: {{ pillar['passwords']['jenkins_builder']['jenkins'] }}
+
 {% for key in pillar['ssh_fingerprints']['review.gluster.org'] %}
 jenkins_keys_{{ key.enc }}:
   ssh_known_hosts.present:
