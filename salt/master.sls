@@ -97,7 +97,7 @@ salt_cloud:
     - template: jinja
     - require:
       - pkg: salt-cloud
-     - context:
+    - context:
         user:   {{ pillar['cloud']['rackspace']['user'] }}
         tenant: {{ pillar['cloud']['rackspace']['tenant'] }}
         apikey: {{ pillar['cloud']['rackspace']['apikey'] }}
