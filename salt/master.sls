@@ -96,7 +96,7 @@ salt_cloud:
     - source: salt://salt/rackspace.conf
     - template: jinja
     - require:
-      - pkg: salt-master
+      - pkg: salt-cloud
      - context:
         user:   {{ pillar['cloud']['rackspace']['user'] }}
         tenant: {{ pillar['cloud']['rackspace']['tenant'] }}
@@ -107,10 +107,10 @@ jenkins_profile:
   file:
     - managed
     - mode: 700
-    - name: /etc/salt/cloud.profiles.d/rackspace.conf
+    - name: /etc/salt/cloud.profiles.d/jenkins.conf
     - source: salt://salt/jenkins.conf
     - require:
-      - pkg: salt-master
+      - pkg: salt-cloud
   
 # TODO
 #  make sure the repo used the shared options
