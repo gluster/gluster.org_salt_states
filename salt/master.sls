@@ -60,12 +60,14 @@ git_repos_{{ repo.name }}:
       - /srv/git_repos/{{ repo.name }}
 {% endfor %}
 
-deploy_script:
+{% for script in ['deploy_salt.sh', 'list_old_minions.py' ] %}
+{{ script }}:
   file:
     - managed
     - mode: 755
-    - name: /usr/local/bin/deploy_salt.sh
-    - source: salt://salt/deploy_salt.sh
+    - name: /usr/local/bin/{{ script }}
+    - source: salt://salt/{{ script }}
+{% endfor %}
 
 post_receive_scripts:
   file:
