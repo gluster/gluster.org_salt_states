@@ -85,5 +85,19 @@ post_receive_sudoers:
     - name: /etc/sudoers.d/admins
     - source: salt://salt/admins.sudoers
 
+salt_cloud:
+  file:
+    - managed
+    - mode: 700
+    - name: /etc/salt/cloud.providers.d/rackspace.conf
+    - source: salt://salt/rackspace.conf
+    - template: jinja
+    - context:
+        user:   pillar['cloud']['rackspace']['user']
+        tenant: pillar['cloud']['rackspace']['tenant']
+        apikey: pillar['cloud']['rackspace']['apikey']
+        compute_region: pillar['cloud']['rackspace']['compute_region']
+
+
 # TODO
 #  make sure the repo used the shared options
