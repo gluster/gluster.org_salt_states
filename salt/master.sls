@@ -86,6 +86,9 @@ post_receive_sudoers:
     - source: salt://salt/admins.sudoers
 
 salt_cloud:
+  pkg:
+    - installed
+    - name: salt-cloud
   file:
     - managed
     - mode: 700
