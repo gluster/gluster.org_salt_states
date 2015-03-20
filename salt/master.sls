@@ -96,10 +96,10 @@ salt_cloud:
     - source: salt://salt/rackspace.conf
     - template: jinja
     - context:
-        user:   pillar['cloud']['rackspace']['user']
-        tenant: pillar['cloud']['rackspace']['tenant']
-        apikey: pillar['cloud']['rackspace']['apikey']
-        compute_region: pillar['cloud']['rackspace']['compute_region']
+        user:   {{ pillar['cloud']['rackspace']['user'] }}
+        tenant: {{ pillar['cloud']['rackspace']['tenant'] }}
+        apikey: {{ pillar['cloud']['rackspace']['apikey'] }}
+        compute_region: {{ pillar['cloud']['rackspace']['compute_region'] }}
 
 
 # TODO
