@@ -40,7 +40,7 @@ jenkins_user:
     - name: jenkins
     - groups:
       - wheel
-    - passwd: {{ pillar['passwords']['jenkins_builder']['jenkins'] }}
+    - password: {{ pillar['passwords']['jenkins_builder']['jenkins'] }}
 
 {% for key in pillar['ssh_fingerprints']['review.gluster.org'] %}
 jenkins_keys_{{ key.enc }}:
