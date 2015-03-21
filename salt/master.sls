@@ -19,6 +19,11 @@ salt-master:
     - minute: '*/30'
     - name: salt -t 60 '*' state.highstate
 
+master_d:
+  file:
+    - directory
+    - name: /etc/salt/master.d/
+
 reactor_jenkins:
   file:
     - managed
