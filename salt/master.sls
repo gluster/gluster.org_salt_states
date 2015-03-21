@@ -24,6 +24,8 @@ reactor_jenkins:
     - managed
     - name: /etc/salt/master.d/reactor_jenkins.conf
     - source: salt://salt/reactor_jenkins.conf
+    - watch_in:
+      - service: salt-master
 
 {% for port in ['4505', '4506'] %}
 open_port_{{ port }}:
