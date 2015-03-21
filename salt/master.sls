@@ -19,6 +19,12 @@ salt-master:
     - minute: '*/30'
     - name: salt -t 60 '*' state.highstate
 
+reactor_jenkins:
+  file:
+    - managed
+    - name: /etc/salt/master.d/reactor_jenkins.conf
+    - source: salt://salt/reactor_jenkins.conf
+
 {% for port in ['4505', '4506'] %}
 open_port_{{ port }}:
   iptables:
