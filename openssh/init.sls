@@ -34,7 +34,7 @@ openssh:
           UseDNS no
           UsePAM yes
           HostKey /etc/ssh/ssh_host_rsa_key
-          {% if ( grains['osmajorrelease'][0] == '6' or grains['osmajorrelease'][0] == '5' ) and os_family == 'RedHat' %}
+          {% if ( grains['osmajorrelease'][0] == '6' or grains['osmajorrelease'][0] == '5' ) and grains['os_family'] == 'RedHat' %}
           UsePrivilegeSeparation yes
           Hostkey /etc/ssh/ssh_host_dsa_key
           {% else %}
