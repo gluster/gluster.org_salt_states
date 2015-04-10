@@ -60,7 +60,7 @@ git_repos_{{ repo.name }}:
     {% else %}
     - mode: 2770
     {% endif %}
-    - owner: root
+    - user: root
 # TODO put the group in a pillar
     - group: admins
     - names:
