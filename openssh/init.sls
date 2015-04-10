@@ -22,17 +22,6 @@ openssh:
     - mode: 644
     - user: root
     - group: root
-    - contents: |
-        Port 22
-        AuthorizedKeysFile .ssh/authorized_keys
-        ChallengeResponseAuthentication no
-        PasswordAuthentication no
-        PermitRootLogin without-password
-        PrintMotd no
-        Subsystem sftp /usr/lib/ssh/sftp-server
-        UseDNS no
-        UsePAM yes
-        UsePrivilegeSeparation sandbox
     - check_cmd: sshd -t -f
     - contents: |
           Port 22
