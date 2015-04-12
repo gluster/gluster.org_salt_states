@@ -27,7 +27,7 @@ openssh:
           Port 22
           AuthorizedKeysFile .ssh/authorized_keys
           ChallengeResponseAuthentication no
-          PasswordAuthentication no
+          PasswordAuthentication yes
           PermitRootLogin without-password
           PrintMotd no
           Subsystem sftp /usr/lib/ssh/sftp-server
