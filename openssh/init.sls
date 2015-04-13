@@ -24,7 +24,7 @@ openssh:
     - group: root
     - check_cmd: sshd -t -f
     - contents: |
-          Port 22
+          Port {{ salt['pillar.get']('ssh_port:' + grains['fqdn'], '22') }}
           AuthorizedKeysFile .ssh/authorized_keys
           ChallengeResponseAuthentication no
           PasswordAuthentication yes
