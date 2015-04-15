@@ -80,7 +80,7 @@ middleman_builder_planet:
     - mode: 644
     - template: jinja
     - context:
-        name: 
+        name: planet
         result_dir: build
         build_command: "bundle install && bundle exec middleman build"
         remote: deploy_website@www.gluster.org:/var/www/planet/
