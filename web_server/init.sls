@@ -14,7 +14,7 @@ web_configuration:
     - name: /etc/httpd/conf.d/ssl_custom.conf
 
 {% for port in ['443', '8080'] %}
-{% for domain in ['www', 'blog', 'supercolony'] %}
+{% for domain in ['www', 'blog', 'supercolony','planet'] %}
 {{ domain }}.gluster.org_http{% if port == '443'%}s{% endif %}_config:
   file:
     - managed
@@ -28,4 +28,4 @@ web_configuration:
         port: {{ port }}
 {% endfor %}
 {% endfor %}
- 
+
