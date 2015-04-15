@@ -1,9 +1,9 @@
 # TODO need to refactor
-{% name = 'planet' %}
-{% branch = 'master' %}
-{% git_repo = 'https://github.com/gluster/planet-gluster.git' %}
-{% remote = 'deploy_website@www.gluster.org:/var/www/planet/' %}
-{% ssh_key = '/srv/middleman_builder/.ssh/%s_id.rsa' % name %}
+{% set name = 'planet' %}
+{% set branch = 'master' %}
+{% set git_repo = 'https://github.com/gluster/planet-gluster.git' %}
+{% set remote = 'deploy_website@www.gluster.org:/var/www/planet/' %}
+{% set ssh_key = '/srv/middleman_builder/.ssh/%s_id.rsa' % name %}
 
 middleman_builder_{{ name }}:
   git:

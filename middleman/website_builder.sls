@@ -1,8 +1,8 @@
 {% for branch in pillar['middleman_git_branch'] %}
-{% name = 'website_%s' % branch %}
-{% git_repo = 'git://forge.gluster.org/gluster-site/gluster-site.git' %}
-{% remote = 'deploy_website@www.gluster.org:/var/www/middleman_website/%s' % branch %}
-{% ssh_key = '/srv/middleman_builder/.ssh/website_%s_id.rsa' % branch %}
+{% set name = 'website_%s' % branch %}
+{% set git_repo = 'git://forge.gluster.org/gluster-site/gluster-site.git' %}
+{% set remote = 'deploy_website@www.gluster.org:/var/www/middleman_website/%s' % branch %}
+{% set ssh_key = '/srv/middleman_builder/.ssh/website_%s_id.rsa' % branch %}
 
 middleman_builder_{{ name }}:
   git:
