@@ -15,6 +15,7 @@ middleman_builder:
       - mutt
       - patch
       - libcurl-devel
+      - zlib-devel
   user: 
     - present
     - name: middleman_builder 
