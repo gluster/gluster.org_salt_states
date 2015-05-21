@@ -1,6 +1,6 @@
 include:
   - webbuilder.builder_common
   - middleman.common
-  - middleman.website_builder
-  - middleman.planet_builder
+  - middleman.builder.website
+  - middleman.builder.planet
 
