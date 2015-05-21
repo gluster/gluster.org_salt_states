@@ -15,7 +15,7 @@ middleman_builder_{{ project }}:
   file:
     - managed
     - source: salt://webbuilder/config.sh
-    - name: /srv/middleman_builder/{{ project }}.sh
+    - name: /srv/middleman_builder/{{ project }}.conf
     - user: middleman_builder
     - group: middleman_builder
     - mode: 644
@@ -40,7 +40,7 @@ middleman_builder_{{ project }}:
 # share the setting
   cron:
     - present
-    - name: /usr/local/bin/build_deploy.common.sh /srv/middleman_builder/{{ project }}.sh
+    - name: /usr/local/bin/build_deploy.common.sh /srv/middleman_builder/{{ project }}.conf
     - minute: '*/5'
     - user: middleman_builder
 
