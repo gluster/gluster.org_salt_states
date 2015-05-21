@@ -33,7 +33,7 @@ destination_{{ host }}_{{ keyinfo.filename }}:
     - directory
     - user: deploy_website
     - group: root
-    - mode: 644
+    - mode: 755
     - name: /var/www/middleman_website/{{ keyinfo.project}}/{{ keyinfo.branch }}
     - makedirs: true
 
