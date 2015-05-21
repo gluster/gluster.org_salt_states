@@ -12,11 +12,13 @@ def ssh_pub_keys(user='root'):
         for l in open(i,'r+').readlines():
             ssh_type,ssh_key,ssh_comment = l.split()
             filename = os.path.basename(i)
-            branch = ''
+            branch = project = ''
             # custom code, used to transmit metadata
             # in the filename ( a bit inelegant )
-            if filename.startswith("website_"):
-                branch = filename.split('_')[1]
+            if filename.startswith("builder_"):
+                if filename.count('_') >= 2:
+                    branch = filename.split('_')[1]
+                    project = filename.split('_')[2]
             ret[os.path.basename(i)] = {
                 'type': ssh_type,
                 'key': ssh_key,
@@ -25,5 +27,6 @@ def ssh_pub_keys(user='root'):
                 'filename': filename,
                 'user': user,
                 'branch': branch,
+                'project': project,
             }
     return ret
