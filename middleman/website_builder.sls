@@ -7,7 +7,7 @@
 
 {% endfor %}
 
-{% set name = 'web_master' %  %}
+{% set name = 'web_master' %}
 {% set remote = 'deploy_website@www.gluster.org:/var/www/master/' %}
 {{ middleman_builder(name,'https://github.com/gluster/glusterweb.git', remote) }}
 
