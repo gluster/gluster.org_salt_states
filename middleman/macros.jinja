@@ -21,7 +21,7 @@ middleman_builder_{{ name }}:
     - context:
         name: {{ name }}
         result_dir: build
-        build_command: "bundle install && bundle exec middleman build"
+        build_command: "bundle install && bundle exec middleman build --verbose"
         remote: {{ remote }}
         branch: {{ branch }}
         email_error: mscherer@redhat.com
