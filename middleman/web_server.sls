@@ -20,18 +20,18 @@ middleman_web_server:
 
 {% for host, keysinfo in salt['mine.get']('*', 'custom.ssh_pub_keys').items() %}
 {% for key, keyinfo in keysinfo.items() %}
-sshkeys_{{ host }}_{{ keyinfo.filename }}:
-    ssh_auth:
-    - present
-    - enc: {{ keyinfo.type }}
-    - user: deploy_website
-    - options:
-      - no-port-forwarding
-      - no-agent-forwarding
-      - no-X11-forwarding
-      - no-pty
-      - command="rsync --server -vlogDtprze.isf . /var/www/middleman_website/{{ keyinfo.branch }}"
-    - names:
-      - {{ keyinfo.key }}
+#sshkeys_{{ host }}_{{ keyinfo.filename }}:
+#    ssh_auth:
+#    - present
+#    - enc: {{ keyinfo.type }}
+#    - user: deploy_website
+#    - options:
+#      - no-port-forwarding
+#      - no-agent-forwarding
+#      - no-X11-forwarding
+#      - no-pty
+#      - command="rsync --server -vlogDtprze.isf . /var/www/middleman_website/{{ keyinfo.branch }}"
+#    - names:
+#      - {{ keyinfo.key }}
 {% endfor %}
 {% endfor %}
