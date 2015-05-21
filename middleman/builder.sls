@@ -1,5 +1,6 @@
 include:
-  - middleman.builder.old_website
-  - middleman.builder.website
-  - middleman.builder.planet
+  - .common
+  - .builder.old_website
+  - .builder.website
+  - .builder.planet
 
