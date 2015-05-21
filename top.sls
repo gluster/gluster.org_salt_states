@@ -26,4 +26,3 @@ base:
     - salt.master
   'webbuilder.*':
     - middleman.builder
-    - awestruct.builder
