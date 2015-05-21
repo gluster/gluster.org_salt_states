@@ -1,6 +1,8 @@
 {% macro middleman_builder(name, git_repo, remote, branch='master') %}
 
 {% set ssh_key = '/srv/middleman_builder/.ssh/%s_id.rsa' % name %}
+include:
+  - middleman.common
 
 middleman_builder_{{ name }}:
   git:

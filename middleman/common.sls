@@ -1,3 +1,6 @@
+include:
+  - webbuilder.builder_common
+
 middleman_builder:
   pkg:
     - installed
