@@ -1,6 +1,3 @@
-include:
-  - webbuilder.builder_common
-
 middleman_builder:
   pkg:
     - installed
@@ -21,5 +18,8 @@ middleman_builder:
     - name: middleman_builder 
     - fullname: Middleman builder user
     - home: /srv/middleman_builder/
-
-
+  file:
+    - name: /usr/local/bin/build_deploy.common.sh
+    - managed
+    - mode: 755
+    - source: salt://middleman/build_deploy.common.sh

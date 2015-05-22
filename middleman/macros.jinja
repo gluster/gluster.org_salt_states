@@ -12,7 +12,7 @@ middleman_builder_{{ project }}:
     - rev: {{ branch }}
   file:
     - managed
-    - source: salt://webbuilder/config.sh
+    - source: salt://middleman/config.conf
     - name: /srv/middleman_builder/{{ project }}.conf
     - user: middleman_builder
     - group: middleman_builder
