@@ -17,8 +17,8 @@ def ssh_pub_keys(user='root'):
             # in the filename ( a bit inelegant )
             if filename.startswith("builder_"):
                 if filename.count('_') >= 2:
-                    branch = filename.split('_')[1]
-                    project = filename.split('_')[2]
+                    branch = filename.split('_')[2]
+                    project = filename.split('_')[1]
             ret[os.path.basename(i)] = {
                 'type': ssh_type,
                 'key': ssh_key,
