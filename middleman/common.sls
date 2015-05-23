@@ -23,7 +23,7 @@ middleman_builder:
     - managed
     - mode: 755
     - source: salt://middleman/build_deploy.common.sh
-/srv/middleman_builder/.bash_profile
+/srv/middleman_builder/.bash_profile:
   file: 
     - managed
     - mode: 644
