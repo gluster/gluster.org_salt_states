@@ -44,11 +44,31 @@ bind-master:
           type hint;
           file "named.ca";
         };
+        zone "slaves.gluster.org" IN {
+          type master;
+          file "slaves.gluster.org";
+        };
 
         include "/etc/named.rfc1912.zones";
         include "/etc/named.root.key";
 
+slave_zone:
+  file.managed:
+    - name: /var/named/slaves.gluster.org
+    - mode: 644
+    - user: root
+    - group: root
+    - contents: |
+        $TTL 600
+        @       IN      SOA     ns-slaves.gluster.org. root.gluster.org.  (
+                                              2015061700 ; Serial
+                                              3600       ; Refresh
+                                              1800       ; Retry
+                                              604800     ; Expire
+                                              86400      ; Minimum
+                              )
 
-# gerer /etc/named.conf
-#
+                IN  NS  ns-slaves.gluster.org.
+                IN  NS  ns2-slaves.gluster.org.
+
 
