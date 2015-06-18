@@ -1,11 +1,11 @@
 libvirt:
   pkg:
     - installed
-  file.managed:
-    - name: /etc/sysconfig/libvirtd
-    - contents: 'LIBVIRTD_ARGS="--listen"'
-    - require:
-      - pkg: libvirt
+#  file.managed:
+#    - name: /etc/sysconfig/libvirtd
+#    - contents: 'LIBVIRTD_ARGS="--listen"'
+#    - require:
+#      - pkg: libvirt
   libvirt.keys:
     - require:
       - pkg: libvirt
