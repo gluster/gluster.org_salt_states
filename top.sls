@@ -26,3 +26,5 @@ base:
     - salt.master
   'webbuilder.*':
     - middleman.builder
+  'ci.gluster.org':
+    - libvirt
