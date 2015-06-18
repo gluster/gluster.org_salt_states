@@ -11,3 +11,4 @@ base_pkg:
       - lsof
       - screen
       - htop
+      - strace
