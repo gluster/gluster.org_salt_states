@@ -11,4 +11,6 @@ base_pkg:
       - lsof
       - screen
       - htop
+{% if grains['kernel'] == 'Linux' %}
       - strace
+{% endif %}
