@@ -15,8 +15,8 @@ libvirt:
       - pkg: libvirt
 #      - network: br0
       - libvirt: libvirt
-    - watch:
-      - file: libvirt
+#    - watch:
+#      - file: libvirt
 
 libvirt-python:
   pkg.installed: []
