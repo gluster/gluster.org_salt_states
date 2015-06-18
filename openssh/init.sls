@@ -21,7 +21,12 @@ openssh:
     - name: /etc/ssh/sshd_config
     - mode: 644
     - user: root
+{% if grains['kernel'] == 'Linux' %}
     - group: root
+{% else %}
+    # freebsd
+    - group: wheel
+{% endif %}
     - check_cmd: sshd -t -f
     - contents: |
           Port {{ salt['pillar.get']('ssh_port:' + grains['fqdn'], '22') }}
