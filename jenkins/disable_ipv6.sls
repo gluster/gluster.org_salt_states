@@ -1,3 +1,4 @@
+{% if grains['kernel'] == 'Linux' %}
 disable_ipv6_eth0:
   file.replace:
     - name: /etc/sysconfig/network-scripts/ifcfg-eth0
@@ -21,4 +22,4 @@ disable_ipv6_modprobe:
   file.managed:
     - name: /etc/modprobe.d/ipv6.conf
     - contents: options ipv6 disable=1
-
+{% endif %}
