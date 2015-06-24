@@ -22,6 +22,7 @@ base:
     - munin.master
   'freebsd0.*':
     - munin.node
+    - jenkins.slave
   'salt-master.*':
     - salt.master
   'webbuilder.*':
