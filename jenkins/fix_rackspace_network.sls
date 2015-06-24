@@ -3,7 +3,7 @@ disable_hosts:
     - name: /etc/hosts
     - pattern: ^(10\.|2001:)
     - repl:
-
+{% if grains['kernel'] == 'Linux' %}
 enable_eth0:
   file.replace:
     - name: /etc/sysconfig/network-scripts/ifcfg-eth0
@@ -15,3 +15,4 @@ disable_eth1:
     - name: /etc/sysconfig/network-scripts/ifcfg-eth1
     - pattern: ^ONBOOT=yes
     - repl: ONBOOT=no
+{% endif %}
