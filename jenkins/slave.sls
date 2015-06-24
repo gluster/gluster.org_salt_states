@@ -19,19 +19,25 @@ jenkins_slave:
       - nfs-utils 
       - yajl 
 {% if grains['kernel'] == 'Linux' %}
-      - mock 
       - perl-Test-Harness
 {% elif grains['kernel'] == 'FreeBSD' %}
       - perl
 {% endif %}
       - java-1.7.0-openjdk
       - git
+
+{% if grains['kernel'] == 'Linux' %}
+jenkins_slave_mock:
+  pkg.installed:
+    - names:
+      - mock
   user.present:
     - name: mock
     - groups:
       - mock
     - require:
       - pkg: mock
+{% endif %}
 
 enable_wheel_sudoers:
   file.managed:
