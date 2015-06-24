@@ -35,7 +35,11 @@ jenkins_slave:
 
 enable_wheel_sudoers:
   file.managed:
+{% if grains['kernel'] == 'Linux' %}
     - name: /etc/sudoers.d/sudoers_jenkins
+{% elif grains['kernel'] == 'FreeBSD' %}
+    - name: /usr/local/etc/sudoers.d/sudoers_jenkins
+{% endif %}
     - contents: '%wheel ALL=(ALL) NOPASSWD: ALL'
 
 # TODO /home in 755 
