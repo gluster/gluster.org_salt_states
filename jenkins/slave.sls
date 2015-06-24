@@ -16,10 +16,10 @@ jenkins_slave:
       - cmockery2-devel 
       - dbench 
       - libacl-devel 
-      - mock 
       - nfs-utils 
       - yajl 
 {% if grains['kernel'] == 'Linux' %}
+      - mock 
       - perl-Test-Harness
 {% elif grains['kernel'] == 'FreeBSD' %}
       - perl
