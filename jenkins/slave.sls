@@ -19,7 +19,11 @@ jenkins_slave:
       - mock 
       - nfs-utils 
       - yajl 
+{% if grains['kernel'] == 'Linux' %}
       - perl-Test-Harness
+{% elif grains['kernel'] == 'FreeBSD' %}
+      - perl
+{% endif %}
       - java-1.7.0-openjdk
       - git
   user.present:
