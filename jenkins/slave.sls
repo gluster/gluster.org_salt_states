@@ -21,7 +21,7 @@ jenkins_slave:
 {% if grains['kernel'] == 'Linux' %}
       - perl-Test-Harness
 {% elif grains['kernel'] == 'FreeBSD' %}
-      - perl
+      - perl5
 {% endif %}
       - java-1.7.0-openjdk
       - git
