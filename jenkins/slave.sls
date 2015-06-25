@@ -13,17 +13,19 @@ include:
 jenkins_slave:
   pkg.installed:
     - names:
-      - cmockery2-devel 
       - dbench 
       - libacl-devel 
       - nfs-utils 
       - yajl 
 {% if grains['kernel'] == 'Linux' %}
+      - cmockery2-devel 
       - perl-Test-Harness
-{% elif grains['kernel'] == 'FreeBSD' %}
-      - perl5
-{% endif %}
       - java-1.7.0-openjdk
+{% elif grains['kernel'] == 'FreeBSD' %}
+      - cmockery2 
+      - perl5
+      - openjdk8-jre
+{% endif %}
       - git
 
 {% if grains['kernel'] == 'Linux' %}
