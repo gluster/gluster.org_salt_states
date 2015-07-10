@@ -9,10 +9,11 @@ enable_eth0:
     - name: /etc/sysconfig/network-scripts/ifcfg-eth0
     - pattern: ^ONBOOT=no
     - repl: ONBOOT=yes
-
+{% if 'eth1' in grains['hwaddr_interfaces'] %}
 disable_eth1:
   file.replace:
     - name: /etc/sysconfig/network-scripts/ifcfg-eth1
     - pattern: ^ONBOOT=yes
     - repl: ONBOOT=no
+{% endif %}
 {% endif %}
