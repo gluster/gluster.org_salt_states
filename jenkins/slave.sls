@@ -20,7 +20,11 @@ jenkins_slave:
 {% if grains['kernel'] == 'Linux' %}
       - cmockery2-devel 
       - perl-Test-Harness
+{% if grains['osfullname'] == 'Fedora' %}
+      - java-1.8.0-openjdk
+{% else %}
       - java-1.7.0-openjdk
+{% endif %}
 {% elif grains['kernel'] == 'FreeBSD' %}
       - cmockery2 
       - perl5
