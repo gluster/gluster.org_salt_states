@@ -29,3 +29,5 @@ base:
     - middleman.builder
   'ci.gluster.org':
     - libvirt
+  'fedora*.ci.gluster.org':
+    - jenkins.slave
