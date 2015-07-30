@@ -22,6 +22,7 @@ jenkins_slave:
       - autoconf
       - libtool
       - flex
+      - bison
       - cmockery2-devel 
       - perl-Test-Harness
 {% if grains['osfullname'] == 'Fedora' %}
