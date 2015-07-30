@@ -18,6 +18,9 @@ jenkins_slave:
       - nfs-utils 
       - yajl 
 {% if grains['kernel'] == 'Linux' %}
+      - automake
+      - autoconf
+      - libtool
       - cmockery2-devel 
       - perl-Test-Harness
 {% if grains['osfullname'] == 'Fedora' %}
