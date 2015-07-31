@@ -25,6 +25,7 @@ jenkins_slave:
       - bison
       - cmockery2-devel 
       - perl-Test-Harness
+      - openssl-devel
 {% if grains['osfullname'] == 'Fedora' %}
       - java-1.8.0-openjdk
 {% else %}
