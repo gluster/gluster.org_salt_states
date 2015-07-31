@@ -34,6 +34,7 @@ jenkins_slave:
       - libibverbs-devel 
       - librdmacm-devel
       - libaio-devel
+      - psmisc   # needed for smoke.sh using killall
 {% if grains['osfullname'] == 'Fedora' %}
       - java-1.8.0-openjdk
 {% else %}
