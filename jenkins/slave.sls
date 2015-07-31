@@ -26,6 +26,14 @@ jenkins_slave:
       - cmockery2-devel 
       - perl-Test-Harness
       - openssl-devel
+      - lvm2-devel
+      - sqlite-devel
+      - libxml2-devel
+      - python-devel
+      - userspace-rcu-devel
+      - libibverbs-devel 
+      - librdmacm-devel
+      - libaio-devel
 {% if grains['osfullname'] == 'Fedora' %}
       - java-1.8.0-openjdk
 {% else %}
