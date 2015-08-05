@@ -117,4 +117,4 @@ nginx:
     - source: /opt/qa/nginx/default.conf
     - require:
       - pkg: nginx
-      - git: git://forge.gluster.org/gluster-patch-acceptance-tests/gluster-patch-acceptance-tests.git
+      - git: https://github.com/gluster/glusterfs-patch-acceptance-tests.git
