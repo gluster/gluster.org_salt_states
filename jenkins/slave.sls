@@ -9,7 +9,8 @@
 include:
   - .disable_ipv6
   - .fix_rackspace_network
-
+  - .gluster_qa_scripts
+  
 jenkins_slave:
   pkg.installed:
     - names:
@@ -102,10 +103,6 @@ jenkins_keys_{{ key.enc }}:
 /build:
   file.symlink:
    - target: /d/build
-
-git://forge.gluster.org/gluster-patch-acceptance-tests/gluster-patch-acceptance-tests.git:
-  git.latest:
-    - target: /opt/qa
 
 nginx:
   pkg:
