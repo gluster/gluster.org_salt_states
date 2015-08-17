@@ -14,6 +14,7 @@ sub vcl_recv {
 
     # Bypass the cache for these things
     if (req.http.host == "blog.gluster.org" 
+        || req.http.host == "planet.gluster.org"
         || ( req.url ~ "^/community/documentation" && ! req.url ~ "^/community/documentation/skins/gluster" )
         || req.url ~ "^/mailman"
        ) {
