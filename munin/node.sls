@@ -30,7 +30,7 @@ munin-node:
         - service: {{ munin_node.service }}
 {% if grains['kernel'] == 'Linux' %}
   iptables:
-    - append
+    - insert
     - table: filter
     # remove once 2015 is out
     - match: tcp
