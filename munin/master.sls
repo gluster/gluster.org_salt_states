@@ -18,6 +18,13 @@ web_configuration:
     - watch_in:
         - service: httpd
 
+old_config:
+  file:
+  - absent
+  - name: /etc/httpd/conf.d/munin.conf
+  - watch_in:
+    - service: httpd
+
 {% for node, data in salt['mine.get']('roles:munin-node', 'test.ping', expr_form='grain').items() %}
 
 config_{{ node }}:
