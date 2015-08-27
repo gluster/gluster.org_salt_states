@@ -10,6 +10,7 @@ include:
   - .disable_ipv6
   - .fix_rackspace_network
   - .gluster_qa_scripts
+  - nginx.server
   
 jenkins_slave:
   pkg.installed:
@@ -103,9 +104,6 @@ jenkins_keys_{{ key.enc }}:
 /build:
   file.symlink:
    - target: /d/build
-
-include:
-  - nginx.server
 
 nginx_config:
   file.copy:
