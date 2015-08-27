@@ -104,14 +104,10 @@ jenkins_keys_{{ key.enc }}:
   file.symlink:
    - target: /d/build
 
-nginx:
-  pkg:
-    - installed
-  service:
-    - running
-    - enable: True
-    - require:
-      - pkg: nginx
+include:
+  - nginx.server
+
+nginx_config:
   file.copy:
     - name: /etc/nginx/conf.d/default.conf
     - source: /opt/qa/nginx/default.conf
