@@ -16,10 +16,10 @@ jenkins_slave:
   pkg.installed:
     - names:
       - dbench 
-      - libacl-devel 
-      - nfs-utils 
       - yajl 
 {% if grains['kernel'] == 'Linux' %}
+      - libacl-devel 
+      - nfs-utils 
       - automake
       - autoconf
       - libtool
