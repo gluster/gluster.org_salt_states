@@ -31,3 +31,5 @@ base:
     - libvirt
   'fedora*.ci.gluster.org':
     - jenkins.slave
+  'centos*.ci.gluster.org':
+    - jenkins.slave
