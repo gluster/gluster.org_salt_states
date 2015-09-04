@@ -27,7 +27,7 @@ nginx:
 #
 #
 {{ config_prefix}}/etc/nginx/nginx.conf:
-  - file:
+  file:
     - managed
     - mode: 644
     - template: jinja
