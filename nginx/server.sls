@@ -31,7 +31,7 @@ nginx:
     - managed
     - mode: 644
     - template: jinja
-    - source: salt://salt/nginx/nginx.conf
+    - source: salt://nginx/nginx.conf
     - require:
       - pkg: nginx
 
