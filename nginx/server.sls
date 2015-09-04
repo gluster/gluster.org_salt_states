@@ -32,6 +32,8 @@ nginx:
     - mode: 644
     - template: jinja
     - source: salt://nginx/nginx.conf
+    - context:
+      config_prefix: {{ config_prefix}}
     - require:
       - pkg: nginx
 
