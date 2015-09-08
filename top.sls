@@ -6,6 +6,7 @@ base:
     - memcached.server
     - middleman.web_server
     - mailman
+    - postfix
   '*':
     - salt.minion
     - base.pkgs
