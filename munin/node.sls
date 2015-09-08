@@ -40,6 +40,7 @@ munin-node:
     - source: 104.130.25.92
     - protocol: tcp
     - jump: ACCEPT
+    - position: 2
 {% endif %}
 {% if grains['kernel'] == 'FreeBSD' %}
 configure munin on Freebsd:
