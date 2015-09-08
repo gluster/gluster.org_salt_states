@@ -1,0 +1,37 @@
+# configuration file managed by salt, do not edit directly
+# all changes will be erased
+
+default_destination_concurrency_limit = 5
+smtpd_banner = $myhostname ESMTP $mail_name (RHEL)
+biff = no
+
+# appending .domain is the MUA's job.
+append_dot_mydomain = no
+
+# Uncomment the next line to generate "delayed mail" warnings
+#delay_warning_time = 4h
+
+readme_directory = /usr/share/doc/postfix-2.6.6/README_FILES
+mynetworks = 127.0.0.0/8
+myorigin = {{ grains['domain'] }} 
+mydestination = {{grains['fqdn'] }}, {{ grains['domain'] }}, localhost
+#relayhost = 
+mailbox_command = procmail -a "$EXTENSION"
+mailbox_size_limit = 0
+recipient_delimiter = +
+inet_interfaces = all
+inet_protocols = ipv4
+myhostname = {{grains['fqdn'] }}
+
+sample_directory = /usr/share/doc/postfix-2.6.6/samples
+sendmail_path = /usr/sbin/sendmail
+html_directory = no
+setgid_group = postdrop
+command_directory = /usr/sbin
+manpage_directory = /usr/share/man
+daemon_directory = /usr/libexec/postfix
+newaliases_path = /usr/bin/newaliases
+mailq_path = /usr/bin/mailq
+queue_directory = /var/spool/postfix
+mail_owner = postfix
+data_directory = /var/lib/postfix
