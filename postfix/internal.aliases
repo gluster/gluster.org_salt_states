@@ -9,7 +9,7 @@ jclift:         justin
 deb.packages:   semiosis
 lzuckerman:     semiosis
 gerrithub:      ndevos
-events:         avati,johnmark,vijay
+events:         avati,johnmark,vijay,amye
 
 #switch to events ? TODO
 cfp:            root
