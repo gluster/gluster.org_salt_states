@@ -3,9 +3,15 @@
 #various personal alias
 jclift:         justin
 
-# add  deb.packages, lzuckerman to semiosis
-# add gerrithub
+# from old file, not sure why it is here
+# kumar.sampas:  root
+
+deb.packages:   semiosis
+lzuckerman:     semiosis
+gerrithub:      ndevos
 events:         avati,johnmark,vijay
+
+#switch to events ? TODO
 cfp:            root
 workshop:       root
 
