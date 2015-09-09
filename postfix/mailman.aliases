@@ -1,6 +1,6 @@
 # TODO make it loop over a list of lists
 
-{% for list in pillar['mailing_lists] %}
+{% for list in pillar['mailing_lists'] %}
 ## {{ list }} mailing list
 {{ list }}:              "|/var/lib/mailman/mail/mailman post {{ list }}"
 {{ list }}-admin:        "|/var/lib/mailman/mail/mailman admin {{ list }}"
