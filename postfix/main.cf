@@ -23,6 +23,11 @@ inet_interfaces = all
 inet_protocols = ipv4
 myhostname = {{grains['fqdn'] }}
 
+alias_maps = hash:/etc/postfix/external.aliases
+             hash:/etc/postfix/internal.aliases
+             hash:/etc/postfix/mailman.aliases
+             hash:/etc/aliases
+
 sample_directory = /usr/share/doc/postfix-2.6.6/samples
 sendmail_path = /usr/sbin/sendmail
 html_directory = no
