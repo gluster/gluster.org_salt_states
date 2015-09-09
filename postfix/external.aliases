@@ -1,3 +1,3 @@
-{% for alias in pillar['email_aliases'] %}
-{{ alias}}: {% for recpt in pillar['email_aliases'][ alias ] %}{{ recipient }},{% endfor %}
+{% for alias, recipients in pillar['email_aliases'].iteritems() %}
+{{ alias }}: {% for recipient in recipients %}{{ recipient }},{% endfor %}
 {% endfor %}
