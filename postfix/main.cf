@@ -40,6 +40,7 @@ smtpd_recipient_restrictions = permit_mynetworks
 #  reject_unknown_client
   check_policy_service unix:postgrey/socket
 
+smtp_use_tls = yes
 
 sample_directory = /usr/share/doc/postfix-2.6.6/samples
 sendmail_path = /usr/sbin/sendmail
