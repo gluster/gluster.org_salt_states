@@ -12,4 +12,4 @@
 {{ list }}-request:      "|/var/lib/mailman/mail/mailman request {{ list }}"
 {{ list }}-subscribe:    "|/var/lib/mailman/mail/mailman subscribe {{ list }}"
 {{ list }}-unsubscribe:  "|/var/lib/mailman/mail/mailman unsubscribe {{ list }}"
-{% end %}
+{% endfor %}
