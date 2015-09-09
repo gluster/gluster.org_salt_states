@@ -1,3 +1,4 @@
+# file managed by salt, all local edit will be lost
 {% for alias in pillar['email_aliases'] %}
 {{ alias }}: {% for recipient in pillar['email_aliases'][alias] %}{{ recipient }}{% if not loop.last %},{% endif %}{% endfor %}
 {% endfor %}

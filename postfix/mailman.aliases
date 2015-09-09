@@ -1,15 +1,15 @@
-# TODO make it loop over a list of lists
+# file managed by salt, all local edits will be lost
 
 {% for list in pillar['mailing_lists'] %}
 ## {{ list }} mailing list
-{{ list }}:              "|/var/lib/mailman/mail/mailman post {{ list }}"
-{{ list }}-admin:        "|/var/lib/mailman/mail/mailman admin {{ list }}"
-{{ list }}-bounces:      "|/var/lib/mailman/mail/mailman bounces {{ list }}"
-{{ list }}-confirm:      "|/var/lib/mailman/mail/mailman confirm {{ list }}"
-{{ list }}-join:         "|/var/lib/mailman/mail/mailman join {{ list }}"
-{{ list }}-leave:        "|/var/lib/mailman/mail/mailman leave {{ list }}"
-{{ list }}-owner:        "|/var/lib/mailman/mail/mailman owner {{ list }}"
-{{ list }}-request:      "|/var/lib/mailman/mail/mailman request {{ list }}"
-{{ list }}-subscribe:    "|/var/lib/mailman/mail/mailman subscribe {{ list }}"
-{{ list }}-unsubscribe:  "|/var/lib/mailman/mail/mailman unsubscribe {{ list }}"
+{{ list }}:              "|/usr/lib/mailman/mail/mailman post {{ list }}"
+{{ list }}-admin:        "|/usr/lib/mailman/mail/mailman admin {{ list }}"
+{{ list }}-bounces:      "|/usr/lib/mailman/mail/mailman bounces {{ list }}"
+{{ list }}-confirm:      "|/usr/lib/mailman/mail/mailman confirm {{ list }}"
+{{ list }}-join:         "|/usr/lib/mailman/mail/mailman join {{ list }}"
+{{ list }}-leave:        "|/usr/lib/mailman/mail/mailman leave {{ list }}"
+{{ list }}-owner:        "|/usr/lib/mailman/mail/mailman owner {{ list }}"
+{{ list }}-request:      "|/usr/lib/mailman/mail/mailman request {{ list }}"
+{{ list }}-subscribe:    "|/usr/lib/mailman/mail/mailman subscribe {{ list }}"
+{{ list }}-unsubscribe:  "|/usr/lib/mailman/mail/mailman unsubscribe {{ list }}"
 {% endfor %}
