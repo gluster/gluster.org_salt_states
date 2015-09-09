@@ -19,6 +19,6 @@ mailman:
 create_{{ list }}:
   cmd:
     - run
-    - name: /usr/lib/mailman/bin/newlist {{ list }} listmaster@{{ grains['domain'] }} {{ list }}
+    - name: /usr/lib/mailman/bin/newlist {{ list }} list-admin@{{ grains['domain'] }} {{ list }}
     - creates: /var/lib/mailman/lists/{{ list }}/config.pck
 {% endfor %}
