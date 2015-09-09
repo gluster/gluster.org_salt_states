@@ -1,0 +1,30 @@
+# file managed by salt, all edits not in git will be lost
+
+#various personal alias
+jclift:         justin
+
+# add  deb.packages, lzuckerman to semiosis
+# add gerrithub
+events:         avati,johnmark,vijay
+cfp:            root
+workshop:       root
+
+forge-admin:    root
+list-admin:     root
+
+# aliases for rfc 2142
+# https://www.ietf.org/rfc/rfc2142.txt
+
+abuse:          root
+noc:            root
+# TODO go to secalert ?
+security:       root
+
+postmaster:     root               
+hostmaster:     root             
+webmaster:      root            
+www:            root            
+ftp:            root              
+
+mailer-daemon:  postmaster
+

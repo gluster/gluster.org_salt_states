@@ -1,0 +1,15 @@
+# TODO make it loop over a list of lists
+
+{% for list in pillar['mailing_lists] %}
+## {{ list }} mailing list
+{{ list }}:              "|/var/lib/mailman/mail/mailman post {{ list }}"
+{{ list }}-admin:        "|/var/lib/mailman/mail/mailman admin {{ list }}"
+{{ list }}-bounces:      "|/var/lib/mailman/mail/mailman bounces {{ list }}"
+{{ list }}-confirm:      "|/var/lib/mailman/mail/mailman confirm {{ list }}"
+{{ list }}-join:         "|/var/lib/mailman/mail/mailman join {{ list }}"
+{{ list }}-leave:        "|/var/lib/mailman/mail/mailman leave {{ list }}"
+{{ list }}-owner:        "|/var/lib/mailman/mail/mailman owner {{ list }}"
+{{ list }}-request:      "|/var/lib/mailman/mail/mailman request {{ list }}"
+{{ list }}-subscribe:    "|/var/lib/mailman/mail/mailman subscribe {{ list }}"
+{{ list }}-unsubscribe:  "|/var/lib/mailman/mail/mailman unsubscribe {{ list }}"
+{% end %}
