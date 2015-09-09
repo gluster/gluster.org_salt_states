@@ -7,6 +7,7 @@ base:
     - middleman.web_server
     - mailman
     - postfix
+    - postgrey
   '*':
     - salt.minion
     - base.pkgs
