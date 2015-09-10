@@ -41,7 +41,9 @@ smtpd_recipient_restrictions = permit_mynetworks
   reject_unknown_sender_domain
 #  reject_unknown_client
   check_policy_service unix:postgrey/socket
-  reject_rbl_client sbl-xbl.spamhaus.org
+{% for blacklist in salt['pillar.get']('smtp_blacklist', []) %}
+  reject_rbl_client {{ blacklist }}
+{% endfor %}
 
 smtp_use_tls = yes
 
