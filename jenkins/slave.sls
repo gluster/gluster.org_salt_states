@@ -46,6 +46,7 @@ jenkins_slave:
       - cmockery2 
       - perl5
       - openjdk8-jre
+      - sqlite3
 {% endif %}
       - git
 
