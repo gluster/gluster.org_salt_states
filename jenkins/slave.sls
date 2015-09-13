@@ -1,3 +1,10 @@
+{% set config_prefix = salt['grains.filter_by']({
+      'RedHat': '',
+      'FreeBSD': '/usr/local',
+   }, default='RedHat')
+%}
+
+
 # TODO
 # Copy the Jenkins SSH key from build.gluster.org
 # Update hostname ??
@@ -108,7 +115,7 @@ jenkins_keys_{{ key.enc }}:
 
 nginx_config:
   file.copy:
-    - name: /etc/nginx/conf.d/default.conf
+    - name: {{ config_prefix}}/etc/nginx/conf.d/default.conf
     - source: /opt/qa/nginx/default.conf
     - require:
       - pkg: nginx
