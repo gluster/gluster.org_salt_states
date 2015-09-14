@@ -13,8 +13,11 @@
       - {{ key }}
 {% endfor %}
 
-copy_cron:
-  cron.present:
-    - user: root
-    - minute: '*/30'
-    - name: cp -R /var/log/httpd ~{{ username }}/logs && chown -R {{username }} ~{{ username }}/logs
+#
+## disabled for now, until I figure a better way to do that
+#
+#copy_cron:
+#  cron.present:
+#    - user: root
+#    - minute: '*/30'
+#    - name: cp -R /var/log/httpd ~{{ username }}/logs && chown -R {{username }} ~{{ username }}/logs
