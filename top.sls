@@ -36,3 +36,6 @@ base:
     - jenkins.slave
   'centos*.ci.gluster.org':
     - jenkins.slave
+  # download.gluster.org
+  'supercolony-gen1.gluster.org':
+    - rsync_bitergia
