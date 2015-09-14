@@ -39,3 +39,4 @@ base:
   # download.gluster.org
   'supercolony-gen1.gluster.org':
     - rsync_bitergia
+    - download
