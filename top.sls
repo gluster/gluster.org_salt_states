@@ -10,8 +10,7 @@ base:
     - postgrey
   '*':
     - salt.minion
-    - base.pkgs
-    - base.ssh_keys
+    - base
     - ntp
     - openssh
     - munin.node
