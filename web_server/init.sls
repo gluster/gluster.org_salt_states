@@ -29,3 +29,8 @@ web_configuration:
 {% endfor %}
 {% endfor %}
 
+
+httpd_can_sendmail:
+  selinux.boolean:
+  - value: True
+  - persist: True
