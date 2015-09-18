@@ -10,7 +10,7 @@ middleman_web_server:
     - present
     - name: deploy_website
     - fullname: Middleman deploy user
-    - home: /var/www/middleman_website
+    - home: /srv/middleman_website
 
 {% for host, keysinfo in salt['mine.get']('*', 'custom.ssh_pub_keys').items() %}
 {% for key, keyinfo in keysinfo.items() %}
@@ -24,7 +24,7 @@ sshkeys_{{ host }}_{{ keyinfo.filename }}:
       - no-agent-forwarding
       - no-X11-forwarding
       - no-pty
-      - command="rsync --server -vlogDtprze.isf . /var/www/middleman_website/{{ keyinfo.project}}/{{ keyinfo.branch }}"
+      - command="rsync --server -vlogDtprze.isf . /srv/middleman_website/www/{{ keyinfo.project}}/{{ keyinfo.branch }}"
     - names:
       - {{ keyinfo.key }}
 
@@ -34,7 +34,7 @@ destination_{{ host }}_{{ keyinfo.filename }}:
     - user: deploy_website
     - group: root
     - mode: 755
-    - name: /var/www/middleman_website/{{ keyinfo.project}}/{{ keyinfo.branch }}
+    - name: /srv/middleman_website/www/{{ keyinfo.project}}/{{ keyinfo.branch }}
     - makedirs: true
 
 {% endfor %}
