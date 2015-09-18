@@ -12,7 +12,7 @@ enforcing:
 
 /etc/selinux/config:
   file:
-    - present
+    - managed
     - owner: root
     - group: root
     - mode: 644
@@ -26,7 +26,7 @@ enforcing:
 
 /etc/selinux/semanage.conf:
   file:
-    - present
+    - managed
     - owner: root
     - group: root
     - mode: 644
