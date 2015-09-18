@@ -8,7 +8,11 @@ selinux_pkgs:
       - policycoreutils-python
 
 enforcing:
-  selinux.mode
+  selinux:
+    - mode
+    - require:
+      - pkg: selinux-policy
+      - pkg: selinux-policy-targeted
 
 /etc/selinux/config:
   file:
@@ -18,6 +22,7 @@ enforcing:
     - mode: 644
     - require:
       - pkg: selinux-policy
+      - pkg: selinux-policy-targeted
     - contents: |
         # file managed by salt, all changes will be erased
         SELINUX=enforcing
