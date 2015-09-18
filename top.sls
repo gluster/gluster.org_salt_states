@@ -8,6 +8,7 @@ base:
     - mailman
     - postfix
     - postgrey
+    - selinux
   '*':
     - salt.minion
     - base
