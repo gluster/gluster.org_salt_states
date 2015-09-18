@@ -13,7 +13,7 @@ middleman_web_server:
     - fullname: Middleman deploy user
     - home: {{ homedir_middleman }}
   cmd:
-    - wait:
+    - wait
     - name: semanage fcontext -a -t ssh_home_t {{ homedir_middleman }}/.ssh/authorized_keys
     - watch:
       - user: deploy_website
