@@ -30,7 +30,11 @@ web_configuration:
 {% endfor %}
 
 
-httpd_can_sendmail:
+selinux_webserver:
   selinux.boolean:
+  - names:
+    # both required for wordpress blog
+    - httpd_can_sendmail
+    - httpd_can_network_memcache
   - value: True
   - persist: True
