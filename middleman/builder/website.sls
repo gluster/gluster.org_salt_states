@@ -1,6 +1,6 @@
 {% from 'middleman/macros.jinja' import middleman_builder with context %}
 
-{% set remote = 'deploy_website@www.gluster.org:/var/www/middleman_website/web/master' %}
+{% set remote = 'deploy_website@www.gluster.org:/srv/middleman_website/www/web/master' %}
 {{ middleman_builder('web', 'https://github.com/gluster/glusterweb.git', remote) }}
 
 # since we have feeds on the main website
