@@ -35,7 +35,7 @@ openssh:
           PasswordAuthentication yes
           PermitRootLogin without-password
           PrintMotd no
-          Subsystem sftp /usr/lib/ssh/sftp-server
+          Subsystem sftp /usr/libexec/openssh/sftp-server
           UseDNS no
           UsePAM yes
           HostKey /etc/ssh/ssh_host_rsa_key
