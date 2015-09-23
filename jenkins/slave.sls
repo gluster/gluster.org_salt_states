@@ -87,6 +87,13 @@ jenkins_user:
       - wheel
     - password: {{ pillar['passwords']['jenkins_builder']['jenkins'] }}
 
+{% if grains['kernel'] == 'Linux' %}
+profile_sh:
+  file.managed:
+    - name: /etc/profile.d/gluster_test.sh
+    - contents: 'export PATH="$PATH:/build/install/sbin:/build/install/bin"'
+{% endif %}
+
 {% for key in pillar['ssh_fingerprints']['review.gluster.org'] %}
 jenkins_keys_{{ key.enc }}:
   ssh_known_hosts.present:
