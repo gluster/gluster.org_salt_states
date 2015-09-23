@@ -35,7 +35,11 @@ openssh:
           PasswordAuthentication yes
           PermitRootLogin without-password
           PrintMotd no
+{% if grains['kernel'] == 'Linux' %}
           Subsystem sftp /usr/libexec/openssh/sftp-server
+{% else %}
+          Subsystem sftp /usr/libexec/sftp-server
+{% endif %}          
           UseDNS no
           UsePAM yes
           HostKey /etc/ssh/ssh_host_rsa_key
