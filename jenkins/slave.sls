@@ -18,7 +18,8 @@ include:
   - .fix_rackspace_network
   - .gluster_qa_scripts
   - nginx.server
-  
+  - .auth_root_georep
+
 jenkins_slave:
   pkg.installed:
     - names:
