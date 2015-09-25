@@ -7,3 +7,12 @@ httpd:
     - require:
       - pkg: httpd
 
+{% if grains['osmajorrelease'] == 7 and grains['kernel'] == 'Linux' and grains['os_family'] == 'RedHat' %}
+httpd_firewalld:
+  firewalld:
+    - present
+    - name: public
+      - ports:
+        - 80/tcp
+        - 443/tcp
+{% endif %}
