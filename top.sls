@@ -40,3 +40,6 @@ base:
   'supercolony-gen1.gluster.org':
     - rsync_bitergia
     - download
+  'download01.rax.gluster.org':
+    - selinux
+    - download
