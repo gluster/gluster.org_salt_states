@@ -53,6 +53,14 @@ openssh:
 
 
 {% if grains['kernel'] == 'Linux' %}
+{% if grains['osmajorrelease'] == 7 and grains['kernel'] == 'Linux' and grains['os_family'] == 'RedHat' %}
+openssh_firewalld:
+  firewalld:
+    - present
+    - name: public
+      - ports:
+        - 22/tcp
+{% else %}
 openssh_fw:
   iptables:
     - append
@@ -63,4 +71,5 @@ openssh_fw:
     - dport: 22
     - protocol: tcp
     - jump: ACCEPT
+{% endif %}
 {% endif %}
