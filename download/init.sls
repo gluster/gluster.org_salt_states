@@ -19,7 +19,7 @@ vhost:
 
 # temporary until we have freeipa
 sudoers_upload:
-  - file:
+  file:
     - managed
     - name: /etc/sudoers.d/kkeithley
     - contents: |
