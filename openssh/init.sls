@@ -32,7 +32,7 @@ openssh:
           Port {{ salt['pillar.get']('ssh_port:' + grains['fqdn'], '22') }}
           AuthorizedKeysFile .ssh/authorized_keys
           ChallengeResponseAuthentication no
-          PasswordAuthentication yes
+          PasswordAuthentication {{ salt['pillar.get']('ssh_password_auth:' + grains['fqdn'], 'yes') }}
           PermitRootLogin without-password
           PrintMotd no
 {% if grains['kernel'] == 'Linux' %}
