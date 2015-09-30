@@ -1,3 +1,6 @@
+include:
+  - .motd
+
 openssh:
   # * BSD have openssh in the base system
 {% if grains['kernel'] == 'Linux' %}

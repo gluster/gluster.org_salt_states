@@ -1,0 +1,9 @@
+This system is salt managed!  Local changes may be overwritten.
+
+Security Category: {{ category }} 
+Primary Contact: {{ admin }}
+Purpose: {{ purpose }}
+
+This document is provided as part of CSI standards.  
+See https://infrastructure.fedoraproject.org/csi/security-policy/ for more information. 
+
