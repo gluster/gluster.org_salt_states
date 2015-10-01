@@ -46,3 +46,4 @@ base:
   'freeipa01.rax.gluster.org':
     - selinux
     - freeipa.server
+    - firewalld
