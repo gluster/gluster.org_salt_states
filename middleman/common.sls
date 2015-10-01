@@ -28,4 +28,4 @@ middleman_builder:
     - managed
     - mode: 644
     - contents: 'export PATH="~/bin:$PATH"'
-    - owner: middleman_builder
+    - user: middleman_builder
