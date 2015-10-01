@@ -2,4 +2,11 @@ firewalld:
   pkg:
     - installed
   service:
-    - started
+    - running
+    - enable: True
+
+firewalld_reload:
+  cmd:
+    - wait
+    - name: firewall-cmd --reload
+
