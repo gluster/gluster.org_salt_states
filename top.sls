@@ -43,3 +43,6 @@ base:
   'download01.rax.gluster.org':
     - selinux
     - download
+  'freeipa01.rax.gluster.org':
+    - selinux
+    - freeipa.server
