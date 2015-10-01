@@ -38,5 +38,5 @@ work_around_firewalld:
      - wait
      - name: firewall-cmd --add-service=freeipa-ldaps  --permanent
      - watch_in:
-        - cmd.wait: firewalld_reload
+        - cmd: firewalld_reload
   
