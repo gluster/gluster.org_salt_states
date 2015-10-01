@@ -1,5 +1,5 @@
 {% set config_prefix = salt['grains.filter_by']({ 
-      'RedHat': '',
+      'RedHat': '/',
       'FreeBSD': '/usr/local',
    }, default='RedHat') 
 %}
@@ -14,9 +14,9 @@ nginx:
     - require:
       - pkg: nginx
     - watch:
-      - file: {{ config_prefix}}/etc/nginx/nginx.conf
+      - file: {{ config_prefix}}etc/nginx/nginx.conf
 
-{{ config_prefix}}/etc/nginx/conf.d/:
+{{ config_prefix}}etc/nginx/conf.d/:
   file:
     - directory
     - dir_mode: 755
@@ -26,7 +26,7 @@ nginx:
 # TODO add some configuration file with template for conf.d/
 #
 #
-{{ config_prefix}}/etc/nginx/nginx.conf:
+{{ config_prefix}}etc/nginx/nginx.conf:
   file:
     - managed
     - mode: 644
