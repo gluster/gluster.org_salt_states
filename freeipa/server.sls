@@ -9,5 +9,5 @@ freeipa:
   firewalld:
     - present
     - name: public
-      - services:
-        - freeipa-ldaps
+    - services:
+      - freeipa-ldaps
