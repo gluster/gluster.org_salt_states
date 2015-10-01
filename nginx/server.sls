@@ -1,6 +1,6 @@
 {% set config_prefix = salt['grains.filter_by']({ 
       'RedHat': '/',
-      'FreeBSD': '/usr/local',
+      'FreeBSD': '/usr/local/',
    }, default='RedHat') 
 %}
 
