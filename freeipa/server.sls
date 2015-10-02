@@ -19,12 +19,15 @@ freeipa:
 #    - name: public
 #    - services:
 #      - freeipa-ldaps
+
+#
+# quick dirty hack, likely not doing what I want
 #
 work_around_firewalld:
   file:
-     - managed
-     - name: /etc/firewalld/services/freeipa-ldaps.xml
-     - content: |
+    - managed
+    - name: /etc/firewalld/services/freeipa-ldaps.xml
+    - contents: |
            <?xml version="1.0" encoding="utf-8"?>
            <service>
            <short>FreeIPA with LDAPS</short>
@@ -39,8 +42,10 @@ work_around_firewalld:
              <port protocol="tcp" port="636"/>
            </service>
   cmd:
-     - wait
-     - name: firewall-cmd --add-service=freeipa-ldaps  --permanent
-     - watch_in:
+    - wait
+    - name: firewall-cmd --add-service=freeipa-ldaps  --permanent
+    - watch:
+        - file: /etc/firewalld/services/freeipa-ldaps.xml
+    - watch_in:
         - cmd: firewalld_reload
   
