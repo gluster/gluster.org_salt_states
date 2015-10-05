@@ -24,11 +24,11 @@ master_d:
     - directory
     - name: /etc/salt/master.d/
 
-reactor_jenkins:
+reactor:
   file:
     - managed
-    - name: /etc/salt/master.d/reactor_jenkins.conf
-    - source: salt://salt/reactor_jenkins.conf
+    - name: /etc/salt/master.d/reactor.conf
+    - source: salt://salt/reactor.conf
     - watch_in:
       - service: salt-master
 

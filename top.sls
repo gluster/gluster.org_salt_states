@@ -27,7 +27,6 @@ base:
     - jenkins.slave
   'salt-master.*':
     - salt.master
-    - freeipa.freeipa_automated_enrollment
   'webbuilder.*':
     - middleman.builder
   'ci.gluster.org':
