@@ -41,6 +41,8 @@ work_around_firewalld:
              <port protocol="udp" port="123"/>
              <port protocol="tcp" port="636"/>
            </service>
+    - watch_in:
+        - cmd: firewalld_reload
   cmd:
     - wait
     - name: firewall-cmd --add-service=freeipa-ldaps  --permanent
