@@ -13,7 +13,7 @@ declare_client_ipa:
 
 install_freeipa_client:
   salt.function:
-    - name: pkg.installed
+    - name: pkg.install
     - tgt: {{ pillar['target'] }}
     - arg:
       - ipa-client
