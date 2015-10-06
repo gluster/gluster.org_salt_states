@@ -9,18 +9,18 @@ declare_client_ipa:
     - tgt: {{ freeipa_server }}
     - arg:
       #TODO use password for admin
-      - ipa host-add {{target }} --password={{ temp_passwd }}
+      - ipa host-add {{ pillar['target'] }} --password={{ temp_passwd }}
 
 install_freeipa_client:
   salt.function:
     - name: pkg.installed
-    - tgt: {{ target }}
+    - tgt: {{ pillar['target'] }}
     - arg:
       - ipa-client
 
 enroll_client:
   salt.function:
     - name: cmd.run
-    - tgt: {{ target }}
+    - tgt: {{ pillar['target'] }}
     - arg:
       - ipa-client-install --mkhomedir --domain={{ pillar['project_domain'] }} --server={{ freeipa_server }} -U -w {{ temp_passwd }}
