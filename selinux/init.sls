@@ -32,7 +32,7 @@ enforcing:
 /etc/selinux/semanage.conf:
   file:
     - managed
-    - owner: root
+    - user: root
     - group: root
     - mode: 644
     - require:
