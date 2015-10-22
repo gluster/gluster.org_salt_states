@@ -41,6 +41,7 @@ base:
     - rsync_bitergia
     - download
   'download01.rax.gluster.org':
+    - rsync_bitergia
     - selinux
     - download
   'freeipa01.rax.gluster.org':
