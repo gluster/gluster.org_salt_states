@@ -1,3 +1,7 @@
+mod_ssl:
+  pkg:
+    - installed
+
 httpd:
   pkg:
     - installed
@@ -6,6 +10,7 @@ httpd:
     - enable: True
     - require:
       - pkg: httpd
+      - pkg: mod_ssl
 
 {% if grains['osmajorrelease'] == 7 and grains['kernel'] == 'Linux' and grains['os_family'] == 'RedHat' %}
 httpd_firewalld:
