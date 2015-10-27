@@ -25,6 +25,9 @@ sudoers_upload:
     - contents: |
           kkeithley ALL= ALL
 
+createrepo:
+  pkg:
+    - installed
 
 
 # comment CustomLog logs/access_log combined in /etc/httpd/conf/httpd.conf
