@@ -38,6 +38,7 @@ openssh:
           PasswordAuthentication {{ salt['pillar.get']('ssh_password_auth:' + grains['fqdn'], 'yes') }}
           PermitRootLogin without-password
           PrintMotd yes
+          LogLevel {{ salt['pillar.get']('ssh_log_level:' + grains['fqdn'], 'INFO') }}
 {% if grains['kernel'] == 'Linux' %}
           Subsystem sftp /usr/libexec/openssh/sftp-server
 {% else %}
