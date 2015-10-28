@@ -3,12 +3,18 @@
 {% set freeipa_server = 'freeipa01.rax.gluster.org' %}
 
 # https://docs.fedoraproject.org/en-US/Fedora/18/html/FreeIPA_Guide/kickstart.html
+get_kerberos_ticket:
+  salt.function:
+    - name: cmd.run
+    - tgt: {{ freeipa_server }}
+    - arg:
+      - kinit -k -t /etc/krb5.keytab
+
 declare_client_ipa:
   salt.function:
     - name: cmd.run
     - tgt: {{ freeipa_server }}
     - arg:
-      #TODO use password for admin
       - ipa host-add {{ pillar['target'] }} --password={{ temp_passwd }}
 
 install_freeipa_client:
