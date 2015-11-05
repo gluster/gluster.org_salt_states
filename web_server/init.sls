@@ -7,12 +7,6 @@ include:
 # /etc/httpd/conf.d/ilbot.conf
 # /etc/httpd/conf.d/mediawiki_upload_security.conf
 
-web_configuration:
-  file:
-    - managed
-    - source: salt://web_server/ssl_custom.conf
-    - name: /etc/httpd/conf.d/ssl_custom.conf
-
 {% for port in ['443', '8080'] %}
 {% for domain in ['www', 'blog', 'supercolony', 'planet'] %}
 {{ domain }}.gluster.org_http{% if port == '443'%}s{% endif %}_config:
