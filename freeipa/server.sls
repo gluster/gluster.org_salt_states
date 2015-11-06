@@ -19,7 +19,11 @@ freeipa:
 #    - name: public
 #    - services:
 #      - freeipa-ldaps
-
+create_admin_keytab:
+  cmd:
+    - run
+    - creates: /etc/ipa/admin.keytab
+    - name: ipa-getkeytab -s localhost -k /etc/ipa/admin.keytab -p admin@{{ pillar['project_domain'] | upper }} -D "cn=Directory Manager"  -w "{{ pillar['passwords']['directory_admin'] }}"
 #
 # quick dirty hack, likely not doing what I want
 #
