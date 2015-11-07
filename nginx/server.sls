@@ -3,6 +3,12 @@
       'FreeBSD': '/usr/local/',
    }, default='RedHat') 
 %}
+{% set nginx_user = salt['grains.filter_by']({ 
+      'RedHat': 'nginx',
+      'FreeBSD': 'www',
+   }, default='RedHat') 
+%}
+
 
 
 nginx:
@@ -34,6 +40,7 @@ nginx:
     - source: salt://nginx/nginx.conf
     - context:
       config_prefix: {{ config_prefix}}
+      nginx_user: {{ nginx_user }}
     - require:
       - pkg: nginx
 
