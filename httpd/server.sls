@@ -25,7 +25,7 @@ httpd_firewalld:
 ssl_configuration:
   file:
     - managed
-    - source: salt://web_server/ssl_custom.conf
+    - source: salt://httpd/ssl_custom.conf
     - name: /etc/httpd/conf.d/ssl_custom.conf
     - watch_in:
         - service: httpd
