@@ -8,7 +8,7 @@ get_kerberos_ticket:
     - name: cmd.run
     - tgt: {{ freeipa_server }}
     - arg:
-      - kinit -k -t /etc/krb5.keytab
+      - kinit -k -t /etc/ipa/admin.keytab admin@{{ pillar['project_domain'] | upper }}
 
 declare_client_ipa:
   salt.function:
