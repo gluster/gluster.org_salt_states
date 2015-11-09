@@ -30,3 +30,10 @@ enroll_client:
     - tgt: {{ pillar['target'] }}
     - arg:
       - ipa-client-install --mkhomedir --domain={{ pillar['project_domain'] }} --server={{ freeipa_server }} -U -w {{ temp_passwd }}
+
+destroy_kerberos_ticket:
+  salt.function:
+    - name: cmd.run
+    - tgt: {{ freeipa_server }}
+    - arg:
+      - kdestroy
