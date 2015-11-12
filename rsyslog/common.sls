@@ -13,7 +13,7 @@ rsyslog:
       - rsyslog-gnutls
   service:
     - running
-    - enabled: True
+    - enable: True
   file:
     - managed
     - name: /etc/rsyslog.d/common.conf
