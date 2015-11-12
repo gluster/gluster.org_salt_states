@@ -12,6 +12,9 @@ include:
     - home: {{ logs_dir }}
     - system: True
 
+{{ logs_dir }}:
+  file:
+
 /etc/rsyslog.d/listen_tls.conf:
   file:
     - managed
@@ -22,6 +25,7 @@ include:
         $PrivDropToGroup {{ rsyslog_user }}
         
         $InputTCPServerStreamDriverAuthMode x509/name
+        $InputTCPServerStreamDriverPermittedPeer *.rax.{{ pillar['project_domain'] }}
         $InputTCPServerStreamDriverPermittedPeer *.{{ pillar['project_domain'] }}
         $InputTCPServerStreamDriverMode 1 # run driver in TLS-only mode
         $InputTCPServerRun 514 
