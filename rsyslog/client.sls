@@ -3,9 +3,6 @@
 include:
   - .common
 
-rsyslog_user:
-  
-
 /etc/rsyslog.d/export_to_central.conf:
   file:
     - managed
