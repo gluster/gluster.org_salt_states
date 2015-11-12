@@ -18,12 +18,12 @@ rsyslog:
     - managed
     - name: /etc/rsyslog.d/common.conf
     - contents: |
-      $ModLoad imtcp
-      $DefaultNetstreamDriver gtls
-      # certificate files 
-      $DefaultNetstreamDriverCAFile   {{ ca_file }}
-      $DefaultNetstreamDriverCertFile {{ cert_file }}
-      $DefaultNetstreamDriverKeyFile  {{ key_file }}
+        $ModLoad imtcp
+        $DefaultNetstreamDriver gtls
+        # certificate files
+        $DefaultNetstreamDriverCAFile   {{ ca_file }}
+        $DefaultNetstreamDriverCertFile {{ cert_file }}
+        $DefaultNetstreamDriverKeyFile  {{ key_file }}
 
       
   cmd:
