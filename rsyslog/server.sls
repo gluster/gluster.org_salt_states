@@ -1,12 +1,15 @@
 include:
   - .common
 
+# make sure the $HOME is properly owner
 {% set rsyslog_user = 'rsyslogd' %}
+{% set logs_dir = '/srv/logs/' %}
+
 {{ rsyslog_user }}:
   user.present:
     - fullname: Rsyslogd user - salt created
     - shell: /bin/sh
-    - home: /srv/logs/
+    - home: {{ logs_dir }}
     - system: True
 
 /etc/rsyslog.d/listen_tls.conf:
@@ -24,10 +27,10 @@ include:
         $InputTCPServerRun 514 
         
         #
-        $template DynaFileGeneric,"/srv/logs/%HOSTNAME%/%$YEAR%/%$MONTH%/%$DAY%/syslog.log"
+        $template DynaFileGeneric,"{{ logs_dir }}/%HOSTNAME%/%$YEAR%/%$MONTH%/%$DAY%/syslog.log"
         *.* -?DynaFileGeneric
         
-        $template DynaFileSecure,"/srv/logs/%HOSTNAME%/%$YEAR%/%$MONTH%/%$DAY%/secure"
+        $template DynaFileSecure,"{{ logs_dir }}/%HOSTNAME%/%$YEAR%/%$MONTH%/%$DAY%/secure"
         authpriv.* -?DynaFileSecure
 
 
