@@ -45,9 +45,11 @@ base:
     - rsyslog.server
   'download01.rax.gluster.org':
     - rsync_bitergia
+    - rsyslog.client
     - selinux
     - download
   'freeipa01.rax.gluster.org':
     - selinux
     - freeipa.server
+    - rsyslog.client
     - firewalld
