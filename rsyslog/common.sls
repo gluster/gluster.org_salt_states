@@ -2,6 +2,9 @@
 {% set key_file='/etc/pki/rsyslog/' + grains['fqdn'] + '.key' %}
 {% set ca_file='/etc/ipa/ca.crt' %}
 
+include:
+  - certmonger
+
 rsyslog:
   pkg:
     - installed
