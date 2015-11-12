@@ -4,7 +4,7 @@ include:
 {% set rsyslog_user = 'rsyslogd' %}
 {{ rsyslog_user }}:
   user.present:
-    - fullname: Rsyslogd user, salt created
+    - fullname: Rsyslogd user - salt created
     - shell: /bin/sh
     - home: /srv/logs/
     - system: True
