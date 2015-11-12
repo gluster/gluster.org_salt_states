@@ -3,6 +3,9 @@
 include:
   - .common
 
+#TODO set it in the pillar
+{% set syslog_server = 'syslog.gluster.org' %}
+
 /etc/rsyslog.d/export_to_central.conf:
   file:
     - managed
