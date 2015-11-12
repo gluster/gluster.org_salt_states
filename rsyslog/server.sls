@@ -1,7 +1,6 @@
 include:
   - .common
 
-# make sure the $HOME is properly owner
 {% set rsyslog_user = 'rsyslogd' %}
 {% set logs_dir = '/srv/logs/' %}
 
@@ -12,8 +11,10 @@ include:
     - home: {{ logs_dir }}
     - system: True
 
-{{ logs_dir }}:
-  file:
+# TODO make it selinux aware
+# ie, properly owned, and with proper context (var_log_t)
+# {{ logs_dir }}:
+#  file:
 
 /etc/rsyslog.d/listen_tls.conf:
   file:
