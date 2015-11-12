@@ -20,7 +20,7 @@ include:
       $PrivDropToGroup {{ rsyslog_user }}
 
       $InputTCPServerStreamDriverAuthMode x509/name
-      $InputTCPServerStreamDriverPermittedPeer *.{{ ansible_domain }}
+      $InputTCPServerStreamDriverPermittedPeer *.{{ pillar['project_domain'] }}
       $InputTCPServerStreamDriverMode 1 # run driver in TLS-only mode
       $InputTCPServerRun 514 
       
