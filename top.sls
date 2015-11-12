@@ -26,8 +26,10 @@ base:
     - munin.node
     - jenkins.slave
   'salt-master.*':
+    - rsyslog.client
     - salt.master
   'webbuilder.*':
+    - rsyslog.client
     - middleman.builder
   'ci.gluster.org':
     - libvirt
