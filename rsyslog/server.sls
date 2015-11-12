@@ -15,10 +15,10 @@ include:
     - watch_in:
       - service: rsyslog
     - contents: |
-
+      
       $PrivDropToUser  {{ rsyslog_user }}
       $PrivDropToGroup {{ rsyslog_user }}
-
+      
       $InputTCPServerStreamDriverAuthMode x509/name
       $InputTCPServerStreamDriverPermittedPeer *.{{ pillar['project_domain'] }}
       $InputTCPServerStreamDriverMode 1 # run driver in TLS-only mode
