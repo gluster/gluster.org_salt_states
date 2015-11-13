@@ -55,3 +55,7 @@ base:
     - freeipa.server
     - rsyslog.client
     - firewalld
+  'aide01.rax.gluster.org':
+    - selinux
+    - rsyslog.client
+    - aide
