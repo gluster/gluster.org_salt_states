@@ -5,8 +5,7 @@ aide:
 aide_config:
   file:
     - managed
-    - name:
-      /etc/aide_mirror.conf
+    - name: /etc/aide_mirror.conf
     - contents: |
         database_out=file:/srv/aidedb
         gzip_dbout=yes
