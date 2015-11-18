@@ -1,0 +1,5 @@
+Read-only mirror of the saltstack configuration used for gluster.org
+infrastructure.
+
+Do not send PR on this repository for now, please contact the gluster-infra mailling
+list.
