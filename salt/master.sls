@@ -71,6 +71,9 @@ git_repos_{{ repo.name }}:
     - shared: group
 {% endfor %}
 
+include:
+  - .push_to_remote
+ 
 {% for script in ['deploy_salt.sh', 'list_old_minions.py' ] %}
 {{ script }}:
   file:
