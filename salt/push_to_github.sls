@@ -17,7 +17,7 @@
     - owner: {{ user }}
     - mode: 700
 
-{% for remote in mirrors %}
+{% for remote in remotes %}
 ssh_keys_{{ remote.name }}:
   cmd.run:
     - creates: {{ directory }}/id_{{ remote.name }}
@@ -26,7 +26,7 @@ ssh_keys_{{ remote.name }}:
 
 {% for repos in git_repos %}
   {% if repos.public %}
-    {% for remote in mirrors %}
+    {% for remote in remotes %}
 git_config_{{ repos.name }}_branch_{{ remote.name }}:
   git.config_set:
     name: remote.{{ remote.name }}.url
