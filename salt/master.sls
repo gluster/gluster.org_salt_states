@@ -1,10 +1,4 @@
-# public is mean to be used later if we want to enforce permission
-# or publish automatically somewhere
-{% set git_repos = [
-  {"name":"states", "public": True},
-  {"name":"pillar", "public": True},
-  {"name":"pillar_private", "public": False},
-] %}
+{% from "salt/git_repos.jinja" import git_repos with context %}
 
 salt-master:
   pkg:

@@ -1,3 +1,5 @@
+{% from "salt/git_repos.jinja" import git_repos with context %}
+
 {% set user = 'git_pusher' %}
 {% set directory = '/etc/git_pusher' %}
 {% set remotes = [

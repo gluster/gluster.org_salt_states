@@ -1,0 +1,7 @@
+# public is mean to be used later if we want to enforce permission
+# or publish automatically somewhere
+{% set git_repos = [
+  {"name":"states", "public": True},
+  {"name":"pillar", "public": True},
+  {"name":"pillar_private", "public": False},
+] %}
