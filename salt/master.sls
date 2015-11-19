@@ -67,10 +67,8 @@ git_repos_{{ repo.name }}:
       - /srv/git_repos/{{ repo.name }}
   git.present:
     - names:
-# uncomment once first version in 2015 is out, with
-# https://github.com/saltstack/salt/pull/19046
-#   - shared: group
       - /srv/git_repos/{{ repo.name }}
+    - shared: group
 {% endfor %}
 
 {% for script in ['deploy_salt.sh', 'list_old_minions.py' ] %}
