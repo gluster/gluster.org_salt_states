@@ -30,7 +30,8 @@ ssh_keys_{{ remote.name }}:
   {% if repos.public %}
     {% for remote in remotes %}
 git_config_{{ repos.name }}_branch_{{ remote.name }}:
-  git.config_set:
+  #TODO fix me when new version is out, and use config_set
+  git.config:
     - name: remote.{{ remote.name }}.url
     - value: {{ remote.url_prefix }}{{ repos.name }}.git
     {% endfor %}
