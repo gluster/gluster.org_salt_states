@@ -34,7 +34,7 @@ git_config_{{ repos.name }}_branch_{{ remote.name }}:
   git.config:
     - name: remote.{{ remote.name }}.url
     - value: {{ remote.url_prefix }}{{ repos.name }}.git
-    - cwd: /srv/git_repos/{{ repos.name }}
+    - repo: /srv/git_repos/{{ repos.name }}
     {% endfor %}
   {% endif %}
 {% endfor %}
