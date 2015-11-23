@@ -19,11 +19,12 @@
     - owner: {{ user }}
     - mode: 700
 
-{% for remote in remotes %}
-ssh_keys_{{ remote.name }}:
+# github requires 1 key per repos
+{% for repos in git_repos %}
+ssh_keys_{{ repos.name }}:
   cmd.run:
-    - creates: {{ directory }}/id_{{ remote.name }}
-    - name: ssh-keygen -q -P '' -C "key for pushing to {{ remote.name }}" -f {{ directory }}/id_{{ remote.name }}
+    - creates: {{ directory }}/id_{{ repo.name }}
+    - name: ssh-keygen -q -P '' -C "key for pushing {{ repo.name }} to a remote service" -f {{ directory }}/id_{{ repo.name }}
 {% endfor %}
 
 {% for repos in git_repos %}
