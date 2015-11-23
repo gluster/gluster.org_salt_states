@@ -31,8 +31,8 @@ ssh_keys_{{ remote.name }}:
     {% for remote in remotes %}
 git_config_{{ repos.name }}_branch_{{ remote.name }}:
   git.config_set:
-    name: remote.{{ remote.name }}.url
-    value: {{ remote.url_prefix }}{{ repos.name }}.git
+    - name: remote.{{ remote.name }}.url
+    - value: {{ remote.url_prefix }}{{ repos.name }}.git
     {% endfor %}
   {% endif %}
 {% endfor %}
