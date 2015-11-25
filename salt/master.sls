@@ -93,7 +93,6 @@ post_receive_sudoers:
     - source: salt://salt/admins.sudoers
 
 include:
-  - .push_to_remote
   - .cloud
 # TODO
 #  make sure the repo used the shared options
