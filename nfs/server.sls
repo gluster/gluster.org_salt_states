@@ -11,7 +11,7 @@ create_keytab_ipa_side:
     - data:
         server: {{ grains['fqdn'] }}
 
-{% elif %}
+{% else %}
 nfs_services:
   service:
     - running
@@ -29,7 +29,7 @@ nfs_services:
     - user: root
     - group: root
     - contents: |
-          {% for exports in pillar['export_nfs:' + grains['fqdn'] %}
+          {% for exports in salt['pillar.get']('export_nfs:' + grains['fqdn'], []) %}
           {{ export.path }} {{ export.netmask|default('*')}}({% if export.get('readonly',True) %}ro{% else %}rw{% endif %},sec=krb5,no_subtree_check,no_root_squash)
           {% endfor %}
 refresh_export:
