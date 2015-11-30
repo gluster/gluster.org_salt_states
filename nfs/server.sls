@@ -11,7 +11,7 @@ create_keytab_ipa_side:
     - data:
         server: {{ grains['fqdn'] }}
 
-{% elseif %}
+{% elif %}
 nfs_services:
   service:
     - running
