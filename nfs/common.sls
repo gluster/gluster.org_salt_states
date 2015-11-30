@@ -1,2 +1,2 @@
 nfs-utils:
-  pkg.installed:
+  pkg.installed
