@@ -50,6 +50,7 @@ base:
     - rsyslog.client
     - selinux
     - download
+    - nfs.server
   'freeipa01.rax.gluster.org':
     - selinux
     - freeipa.server
