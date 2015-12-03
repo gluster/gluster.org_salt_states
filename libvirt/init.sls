@@ -19,7 +19,7 @@ libvirt:
 #      - file: libvirt
 
 libvirt-python:
-  pkg.installed: []
+  pkg.installed
 
 libguestfs:
   pkg.installed:
