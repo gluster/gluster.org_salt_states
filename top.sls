@@ -64,3 +64,5 @@ base:
     - selinux
     - rsyslog.client
     - jenkins.master
+  'formicary.gluster.org':
+    - libvirt
