@@ -20,6 +20,9 @@ libvirt:
 
 libvirt-python:
   pkg.installed
+  
+virt-install:
+  pkg.installed
 
 libguestfs:
   pkg.installed:
