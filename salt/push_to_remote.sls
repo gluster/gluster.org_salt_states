@@ -25,7 +25,7 @@
 ssh_keys_{{ repo.name }}:
   cmd.run:
     - creates: {{ directory }}/id_{{remote.name }}_{{ repo.name }}
-    - name: ssh-keygen -q -P '' -C "key for pushing {{ repo.name }} to a remote service" -f {{ directory }}/id_{{ repo.name }}
+    - name: ssh-keygen -q -P '' -C "key for pushing {{ repo.name }} to a remote service" -f {{ directory }}/id_{{remote.name }}_{{ repo.name }}
     # Due to git being too old on EL7, I can't use GIT_SSH
     # https://superuser.com/questions/232373/how-to-tell-git-which-private-key-to-use
     # https://stackoverflow.com/questions/7772190/passing-ssh-options-to-git-clone
