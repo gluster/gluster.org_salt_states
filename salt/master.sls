@@ -94,5 +94,6 @@ post_receive_sudoers:
 
 include:
   - .cloud
+  - .push_to_remote
 # TODO
 #  make sure the repo used the shared options
