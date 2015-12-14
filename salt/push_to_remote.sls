@@ -62,19 +62,19 @@ push_remotes:
     - mode: 644
     - user: root
     - contents: |
-          {% for repo in git_repos %}
-          {% if repo.public %}
+          {% for repo in git_repos -%}
+          {%- if repo.public -%}
           /srv/git_repos/{{ repo.name }}
-          {% endif %}
-          {% endfor %}
+          {% endif -%}
+          {%- endfor %}
 
 {{ directory }}/remotes:
   file.managed:
     - mode: 644
     - user: root
     - contents: |
-          {% for remote in remotes %}
+          {% for remote in remotes -%}
           {{ remote.name }}
-          {% endfor %}
+          {%- endfor -%}
 
 
