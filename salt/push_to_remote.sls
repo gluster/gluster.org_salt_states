@@ -32,7 +32,9 @@ ssh_keys_{{ repo.name }}:
   file.managed:
     - mode: 0755
     - name: {{ directory }}/ssh_wrapper_{{ remote.name }}_{{ repo.name }}
-
+    - contents: |
+          #!/bin/bash
+          exec ssh -i {{ directory }}/id_{{remote.name }}_{{ repo.name }} $*
 {% endfor %}
 {% endfor %}
 
