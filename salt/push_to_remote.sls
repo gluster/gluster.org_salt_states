@@ -36,15 +36,15 @@ ssh_keys_{{ repo.name }}:
 {% endfor %}
 {% endfor %}
 
-{% for repos in git_repos %}
-  {% if repos.public %}
+{% for repo in git_repos %}
+  {% if repo.public %}
     {% for remote in remotes %}
-git_config_{{ repos.name }}_branch_{{ remote.name }}:
+git_config_{{ repo.name }}_branch_{{ remote.name }}:
   #TODO fix me when new version is out, and use config_set
   git.config:
     - name: remote.{{ remote.name }}.url
-    - value: {{ remote.url_prefix }}{{ repos.name }}.git
-    - repo: /srv/git_repos/{{ repos.name }}
+    - value: {{ remote.url_prefix }}{{ repo.name }}.git
+    - repo: /srv/git_repos/{{ repo.name }}
     {% endfor %}
   {% endif %}
 {% endfor %}
@@ -62,8 +62,8 @@ push_remotes:
     - mode: 644
     - user: root
     - contents: |
-        {% for repos in git_repos %}
-          {% if repos.public %}
+        {% for repo in git_repos %}
+          {% if repo.public %}
         /srv/git_repos/{{ repo.name }}
           {% endif %}
         {% endfor %}
@@ -73,8 +73,8 @@ push_remotes:
     - mode: 644
     - user: root
     - contents: |
-        {% for r in remotes %}
-        {{ r.name }}
+        {% for remote in remotes %}
+        {{ remote.name }}
         {% endfor %}
 
 
