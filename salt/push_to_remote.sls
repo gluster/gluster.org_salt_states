@@ -1,6 +1,7 @@
 {% from "salt/git_repos.jinja" import git_repos with context %}
 
 {% set directory = '/etc/git_pusher' %}
+{% set user = '_git_pusher' %}
 {% set remotes = [
   {"name":'github', "url_prefix":"git@github.com:gluster/gluster.org_salt_"},
 ] %}
