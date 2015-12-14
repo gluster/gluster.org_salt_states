@@ -1,6 +1,6 @@
 #!/bin/bash
 for repo in $(cat /etc/git_pusher/repos_to_sync); do
   for remote in $(cat /etc/git_pusher/remotes); do
-    cd $repo ; GIT_SSH=/etc/git_pusher/ssh_wrapper_$(basename ${remote})_$(basename ${repo}) git push -f $remote
+    cd $repo ; GIT_SSH=/etc/git_pusher/ssh_wrapper_$(basename ${remote})_$(basename ${repo}) git push -q -f $remote master
   done;
 done;
