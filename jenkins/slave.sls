@@ -78,7 +78,9 @@ enable_wheel_sudoers:
 {% elif grains['kernel'] == 'FreeBSD' %}
     - name: /usr/local/etc/sudoers.d/sudoers_jenkins
 {% endif %}
-    - contents: '%wheel ALL=(ALL) NOPASSWD: ALL'
+    - contents: |
+          %wheel ALL=(ALL) NOPASSWD: ALL
+          Defaults:%wheel !requiretty
 
 # TODO /home in 755 
 jenkins_user:
