@@ -17,4 +17,4 @@ copy_cron:
   cron.present:
     - user: root
     - minute: '*/30'
-    - name: cp -R /var/log/httpd ~{{ username }}/logs && chown -R {{username }} ~{{ username }}/logs
+    - name: /bin/cp -f -R /var/log/httpd ~{{ username }}/logs && chown -R {{username }} ~{{ username }}/logs
