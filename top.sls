@@ -27,9 +27,6 @@ base:
     - jenkins.slave
   'salt-master.*':
     - salt.master
-  'webbuilder.*':
-    - rsyslog.client
-    - middleman.builder
   'ci.gluster.org':
     - libvirt
     - openvpn
