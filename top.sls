@@ -26,7 +26,6 @@ base:
     - munin.node
     - jenkins.slave
   'salt-master.*':
-    - rsyslog.client
     - salt.master
   'webbuilder.*':
     - rsyslog.client
@@ -42,9 +41,6 @@ base:
   'supercolony-gen1.gluster.org':
     - rsync_bitergia
     - download
-  'syslog01.rax.gluster.org':
-    - selinux
-    - rsyslog.server
   'download01.rax.gluster.org':
     - rsync_bitergia
     - rsyslog.client
@@ -52,9 +48,7 @@ base:
     - download
     - nfs.server
   'freeipa01.rax.gluster.org':
-    - selinux
     - freeipa.server
-    - rsyslog.client
     - firewalld
   'aide01.rax.gluster.org':
     - selinux
