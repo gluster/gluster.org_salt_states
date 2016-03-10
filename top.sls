@@ -9,11 +9,13 @@ base:
     - postfix
     - postgrey
     - selinux
+  '* and not G@cfgmgmt:ansible':
+    - match: compound
+    - openssh
   '*':
     - salt.minion
     - base
     - ntp
-    - openssh
     - munin.node
   'os_family:RedHat':
     - match: grain
