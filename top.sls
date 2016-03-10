@@ -51,9 +51,9 @@ base:
     - selinux
     - rsyslog.client
     - aide
-  'jenkins-master01.rax.gluster.org':
-    - selinux
-    - rsyslog.client
-    - jenkins.master
+    #  'jenkins-master01.rax.gluster.org':
+      #- selinux
+      #- rsyslog.client
+      #- jenkins.master
   'formicary.gluster.org':
     - libvirt
