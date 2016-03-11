@@ -30,7 +30,6 @@ base:
   'salt-master.*':
     - salt.master
   'ci.gluster.org':
-    - libvirt
     - openvpn
   'fedora*.ci.gluster.org':
     - jenkins.slave
@@ -57,5 +56,3 @@ base:
       #- selinux
       #- rsyslog.client
       #- jenkins.master
-  'formicary.gluster.org':
-    - libvirt
