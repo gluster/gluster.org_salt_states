@@ -12,10 +12,10 @@ base:
   '* and not G@cfgmgmt:ansible':
     - match: compound
     - openssh
+    - ntp
   '*':
     - salt.minion
     - base
-    - ntp
     - munin.node
   'os_family:RedHat':
     - match: grain
