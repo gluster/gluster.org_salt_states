@@ -11,12 +11,11 @@ disable_ipv6_network:
     - pattern: ^NETWORKING_IPV6=yes
     - repl: NETWORKING_IPV6=no
 
-disable_ipv6_sysctl:
-  file.append:
-    - name: /etc/sysctl.conf
-    - text:
-      - net.ipv6.conf.all.disable_ipv6 = 1
-      - net.ipv6.conf.default.disable_ipv6 = 1
+{% for item in ['all','default'] %}
+net.ipv6.{{ item }}.disable_ipv6:
+  sysctl.present:
+    - value: "1"
+{% endfor %}
 
 disable_ipv6_modprobe:
   file.managed:
