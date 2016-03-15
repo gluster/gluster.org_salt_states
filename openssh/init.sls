@@ -20,41 +20,11 @@ openssh:
 {% endif %}
     - watch:
       - file: /etc/ssh/sshd_config
-  file.managed:
-    - name: /etc/ssh/sshd_config
-    - mode: 644
-    - user: root
-{% if grains['kernel'] == 'Linux' %}
-    - group: root
-{% else %}
-    # freebsd
-    - group: wheel
-{% endif %}
-    - check_cmd: sshd -t -f
-    - contents: |
-          Port {{ salt['pillar.get']('ssh_port:' + grains['fqdn'], '22') }}
-          AuthorizedKeysFile .ssh/authorized_keys
-          ChallengeResponseAuthentication no
-          PasswordAuthentication {{ salt['pillar.get']('ssh_password_auth:' + grains['fqdn'], 'yes') }}
-          PermitRootLogin without-password
-          PrintMotd yes
-          LogLevel {{ salt['pillar.get']('ssh_log_level:' + grains['fqdn'], 'INFO') }}
-{% if grains['kernel'] == 'Linux' %}
-          Subsystem sftp /usr/libexec/openssh/sftp-server
-{% else %}
-          Subsystem sftp /usr/libexec/sftp-server
-{% endif %}          
-          UseDNS no
-          UsePAM yes
-          HostKey /etc/ssh/ssh_host_rsa_key
-          {% if ( grains['osmajorrelease'][0] == '6' or grains['osmajorrelease'][0] == '5' ) and grains['os_family'] == 'RedHat' %}
-          UsePrivilegeSeparation yes
-          Hostkey /etc/ssh/ssh_host_dsa_key
-          {% else %}
-          UsePrivilegeSeparation sandbox
-          HostKey /etc/ssh/ssh_host_ecdsa_key
-          {% endif %}
 
+  file.line:
+    - name: /etc/ssh/sshd_config
+    - content: PermitRootLogin without-password
+    - mode: replace
 
 {% if grains['kernel'] == 'Linux' %}
 {% if grains['osmajorrelease'] == 7 and grains['kernel'] == 'Linux' and grains['os_family'] == 'RedHat' %}
