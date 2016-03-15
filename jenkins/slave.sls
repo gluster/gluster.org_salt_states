@@ -131,3 +131,7 @@ nginx_config:
     - require:
       - pkg: nginx
       - git: https://github.com/gluster/glusterfs-patch-acceptance-tests.git
+
+kernel.core_pattern:
+  sysctl.present:
+    - value: "/%e-%p.core"
