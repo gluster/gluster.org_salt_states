@@ -46,6 +46,7 @@ jenkins_slave:
       - libaio-devel
       - psmisc   # needed for smoke.sh using killall
       - net-tools # needed for some tests
+      - clang-analyzer
 {% if grains['osfullname'] == 'Fedora' %}
       - java-1.8.0-openjdk
 {% else %}
