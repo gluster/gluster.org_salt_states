@@ -47,6 +47,12 @@ jenkins_slave:
       - psmisc   # needed for smoke.sh using killall
       - net-tools # needed for some tests
       - clang-analyzer
+      - golang   # needed for restapi/eventlet
+      - golang-github-gorilla-mux-devel
+      - golang-github-gorilla-handlers-devel
+      - golang-github-gorilla-websocket-devel
+      - golang-github-dgrijalva-jwt-go-devel
+      - golang-github-Sirupsen-logrus-devel
 {% if grains['osfullname'] == 'Fedora' %}
       - java-1.8.0-openjdk
 {% else %}
