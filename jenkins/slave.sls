@@ -49,7 +49,8 @@ jenkins_slave:
       - clang-analyzer
       - golang   # needed for restapi/eventlet
       - golang-github-gorilla-mux-devel
-      - golang-github-gorilla-handlers-devel
+# removed while the package is in testing
+#      - golang-github-gorilla-handlers-devel
       - golang-github-gorilla-websocket-devel
       - golang-github-dgrijalva-jwt-go-devel
       - golang-github-Sirupsen-logrus-devel
