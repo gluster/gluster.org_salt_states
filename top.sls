@@ -5,7 +5,6 @@ base:
     # needed for wordpress
     - memcached.server
     - middleman.web_server
-    - mailman
     - postfix
     - postgrey
     - selinux
