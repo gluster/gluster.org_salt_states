@@ -20,5 +20,5 @@ net.ipv6.{{ item }}.disable_ipv6:
 disable_ipv6_modprobe:
   file.managed:
     - name: /etc/modprobe.d/ipv6.conf
-    - contents: options ipv6 disable=1
+    - contents: install ipv6 /bin/true
 {% endif %}
