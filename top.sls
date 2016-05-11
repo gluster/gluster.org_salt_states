@@ -1,6 +1,5 @@
 base:
   'supercolony.gluster.org':
-    - varnish
     - web_server
     # needed for wordpress
     - memcached.server
