@@ -19,13 +19,10 @@ base:
   'os_family:RedHat':
     - match: grain
     - yum_cron
-  'slave*.cloud.gluster.org':
-    - jenkins.slave
   'munin.*':
     - munin.master
   'freebsd0.*':
     - munin.node
-    - jenkins.slave
   'salt-master.*':
     - salt.master
   'ci.gluster.org':
