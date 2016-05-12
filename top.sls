@@ -12,14 +12,9 @@ base:
   '*':
     - salt.minion
     - base
-    - munin.node
   'os_family:RedHat':
     - match: grain
     - yum_cron
-  'munin.*':
-    - munin.master
-  'freebsd0.*':
-    - munin.node
   'salt-master.*':
     - salt.master
   'ci.gluster.org':
