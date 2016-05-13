@@ -4,7 +4,6 @@ base:
     - middleman.web_server
     - postfix
     - postgrey
-    - selinux
   '* and not G@cfgmgmt:ansible':
     - match: compound
     - openssh
