@@ -4,13 +4,8 @@ base:
     - middleman.web_server
     - postfix
     - postgrey
-  '* and not G@cfgmgmt:ansible':
-    - match: compound
-    - openssh
-    - ntp
   '*':
     - salt.minion
-    - base
   'salt-master.*':
     - salt.master
   'ci.gluster.org':
