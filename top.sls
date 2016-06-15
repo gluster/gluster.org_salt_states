@@ -11,9 +11,6 @@ base:
   '*':
     - salt.minion
     - base
-  'os_family:RedHat':
-    - match: grain
-    - yum_cron
   'salt-master.*':
     - salt.master
   'ci.gluster.org':
