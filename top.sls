@@ -4,10 +4,6 @@ base:
     - middleman.web_server
     - postfix
     - postgrey
-  '*':
-    - salt.minion
-  'salt-master.*':
-    - salt.master
   'ci.gluster.org':
     - openvpn
   # download.gluster.org
